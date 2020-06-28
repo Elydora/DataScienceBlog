@@ -3,34 +3,36 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>Title | Yet Another Data Science Blog</title>
+<title>Complex Data Types - Dictionaries and Sets | Yet Another Data Science Blog</title>
 <meta name="generator" content="Jekyll v4.0.0" />
-<meta property="og:title" content="Title" />
+<meta property="og:title" content="Complex Data Types - Dictionaries and Sets" />
+<meta name="author" content="Felix" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="just some data science tests" />
-<meta property="og:description" content="just some data science tests" />
-<link rel="canonical" href="https://elydora.github.io/DataScienceBlog/2020/06/21/comp-dt-DictionaryAndSetsInPython.html" />
-<meta property="og:url" content="https://elydora.github.io/DataScienceBlog/2020/06/21/comp-dt-DictionaryAndSetsInPython.html" />
+<meta name="description" content="Example Implementations using Jupyter Notebooks." />
+<meta property="og:description" content="Example Implementations using Jupyter Notebooks." />
+<link rel="canonical" href="https://elydora.github.io/DataScienceBlog/datatypes/jupyter/percipio/2020/06/21/comp-dt-DictionaryAndSetsInPython.html" />
+<meta property="og:url" content="https://elydora.github.io/DataScienceBlog/datatypes/jupyter/percipio/2020/06/21/comp-dt-DictionaryAndSetsInPython.html" />
 <meta property="og:site_name" content="Yet Another Data Science Blog" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2020-06-21T00:00:00-05:00" />
 <script type="application/ld+json">
-{"description":"just some data science tests","@type":"BlogPosting","headline":"Title","dateModified":"2020-06-21T00:00:00-05:00","datePublished":"2020-06-21T00:00:00-05:00","url":"https://elydora.github.io/DataScienceBlog/2020/06/21/comp-dt-DictionaryAndSetsInPython.html","mainEntityOfPage":{"@type":"WebPage","@id":"https://elydora.github.io/DataScienceBlog/2020/06/21/comp-dt-DictionaryAndSetsInPython.html"},"@context":"https://schema.org"}</script>
+{"author":{"@type":"Person","name":"Felix"},"description":"Example Implementations using Jupyter Notebooks.","@type":"BlogPosting","headline":"Complex Data Types - Dictionaries and Sets","dateModified":"2020-06-21T00:00:00-05:00","datePublished":"2020-06-21T00:00:00-05:00","url":"https://elydora.github.io/DataScienceBlog/datatypes/jupyter/percipio/2020/06/21/comp-dt-DictionaryAndSetsInPython.html","mainEntityOfPage":{"@type":"WebPage","@id":"https://elydora.github.io/DataScienceBlog/datatypes/jupyter/percipio/2020/06/21/comp-dt-DictionaryAndSetsInPython.html"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/DataScienceBlog/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://elydora.github.io/DataScienceBlog/feed.xml" title="Yet Another Data Science Blog" /><link rel="shortcut icon" type="image/x-icon" href="/DataScienceBlog/images/favicon.ico"><!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>Title | Yet Another Data Science Blog</title>
+<title>Complex Data Types - Dictionaries and Sets | Yet Another Data Science Blog</title>
 <meta name="generator" content="Jekyll v4.0.0" />
-<meta property="og:title" content="Title" />
+<meta property="og:title" content="Complex Data Types - Dictionaries and Sets" />
+<meta name="author" content="Felix" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="just some data science tests" />
-<meta property="og:description" content="just some data science tests" />
-<link rel="canonical" href="https://elydora.github.io/DataScienceBlog/2020/06/21/comp-dt-DictionaryAndSetsInPython.html" />
-<meta property="og:url" content="https://elydora.github.io/DataScienceBlog/2020/06/21/comp-dt-DictionaryAndSetsInPython.html" />
+<meta name="description" content="Example Implementations using Jupyter Notebooks." />
+<meta property="og:description" content="Example Implementations using Jupyter Notebooks." />
+<link rel="canonical" href="https://elydora.github.io/DataScienceBlog/datatypes/jupyter/percipio/2020/06/21/comp-dt-DictionaryAndSetsInPython.html" />
+<meta property="og:url" content="https://elydora.github.io/DataScienceBlog/datatypes/jupyter/percipio/2020/06/21/comp-dt-DictionaryAndSetsInPython.html" />
 <meta property="og:site_name" content="Yet Another Data Science Blog" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2020-06-21T00:00:00-05:00" />
 <script type="application/ld+json">
-{"description":"just some data science tests","@type":"BlogPosting","headline":"Title","dateModified":"2020-06-21T00:00:00-05:00","datePublished":"2020-06-21T00:00:00-05:00","url":"https://elydora.github.io/DataScienceBlog/2020/06/21/comp-dt-DictionaryAndSetsInPython.html","mainEntityOfPage":{"@type":"WebPage","@id":"https://elydora.github.io/DataScienceBlog/2020/06/21/comp-dt-DictionaryAndSetsInPython.html"},"@context":"https://schema.org"}</script>
+{"author":{"@type":"Person","name":"Felix"},"description":"Example Implementations using Jupyter Notebooks.","@type":"BlogPosting","headline":"Complex Data Types - Dictionaries and Sets","dateModified":"2020-06-21T00:00:00-05:00","datePublished":"2020-06-21T00:00:00-05:00","url":"https://elydora.github.io/DataScienceBlog/datatypes/jupyter/percipio/2020/06/21/comp-dt-DictionaryAndSetsInPython.html","mainEntityOfPage":{"@type":"WebPage","@id":"https://elydora.github.io/DataScienceBlog/datatypes/jupyter/percipio/2020/06/21/comp-dt-DictionaryAndSetsInPython.html"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 <link href="https://unpkg.com/@primer/css/dist/primer.css" rel="stylesheet" />
@@ -85,9 +87,11 @@ window.onload = wrap_img;
         <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">Title</h1><p class="post-meta post-meta-title"><time class="dt-published" datetime="2020-06-21T00:00:00-05:00" itemprop="datePublished">
+    <h1 class="post-title p-name" itemprop="name headline">Complex Data Types - Dictionaries and Sets</h1><p class="page-description">Example Implementations using <a href="https://jupyter.org/">Jupyter Notebooks</a>.</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2020-06-21T00:00:00-05:00" itemprop="datePublished">
         Jun 21, 2020
-      </time>
+      </time>• 
+          <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <span class="p-author h-card" itemprop="name">Felix</span></span>
        • <span class="read-time" title="Estimated read time">
     
     
@@ -95,6 +99,19 @@ window.onload = wrap_img;
     
 </span></p>
 
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/DataScienceBlog/categories/#datatypes">datatypes</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/DataScienceBlog/categories/#jupyter">jupyter</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/DataScienceBlog/categories/#percipio">percipio</a>
+        
+      
+      </p>
     
 
     
@@ -122,7 +139,8 @@ window.onload = wrap_img;
       </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <!--
+    <ul class="section-nav">
+</ul><!--
 #################################################
 ### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
 #################################################
@@ -180,8 +198,8 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">bike_owners</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;James&quot;</span><span class="p">:</span><span class="s2">&quot;Ducati Monster 1200&quot;</span><span class="p">,</span>
-               <span class="s2">&quot;Jacob&quot;</span><span class="p">:</span><span class="s2">&quot;Ducati Scrambler 1100&quot;</span><span class="p">}</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">bike_owners</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"James"</span><span class="p">:</span><span class="s2">"Ducati Monster 1200"</span><span class="p">,</span>
+               <span class="s2">"Jacob"</span><span class="p">:</span><span class="s2">"Ducati Scrambler 1100"</span><span class="p">}</span>
 <span class="n">bike_owners</span>
 </pre></div>
 
@@ -197,7 +215,7 @@ window.onload = wrap_img;
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>{&#39;James&#39;: &#39;Ducati Monster 1200&#39;, &#39;Jacob&#39;: &#39;Ducati Scrambler 1100&#39;}</pre>
+<pre>{'James': 'Ducati Monster 1200', 'Jacob': 'Ducati Scrambler 1100'}</pre>
 </div>
 
 </div>
@@ -215,7 +233,7 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">bike_owners</span><span class="p">[</span><span class="s2">&quot;Jacob&quot;</span><span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">bike_owners</span><span class="p">[</span><span class="s2">"Jacob"</span><span class="p">]</span>
 </pre></div>
 
     </div>
@@ -230,7 +248,7 @@ window.onload = wrap_img;
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&#39;Ducati Scrambler 1100&#39;</pre>
+<pre>'Ducati Scrambler 1100'</pre>
 </div>
 
 </div>
@@ -348,9 +366,9 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">mixed_dict</span> <span class="o">=</span> <span class="p">{</span><span class="kc">False</span><span class="p">:</span> <span class="s2">&quot;Daniel&quot;</span><span class="p">,</span>
-              <span class="s2">&quot;Aria&quot;</span><span class="p">:[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span>
-              <span class="s2">&quot;Jacob&quot;</span><span class="p">:</span><span class="kc">True</span><span class="p">}</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">mixed_dict</span> <span class="o">=</span> <span class="p">{</span><span class="kc">False</span><span class="p">:</span> <span class="s2">"Daniel"</span><span class="p">,</span>
+              <span class="s2">"Aria"</span><span class="p">:[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span>
+              <span class="s2">"Jacob"</span><span class="p">:</span><span class="kc">True</span><span class="p">}</span>
 <span class="n">mixed_dict</span>
 </pre></div>
 
@@ -366,7 +384,7 @@ window.onload = wrap_img;
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>{False: &#39;Daniel&#39;, &#39;Aria&#39;: [1, 2, 3], &#39;Jacob&#39;: True}</pre>
+<pre>{False: 'Daniel', 'Aria': [1, 2, 3], 'Jacob': True}</pre>
 </div>
 
 </div>
@@ -399,7 +417,7 @@ window.onload = wrap_img;
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&#39;Daniel&#39;</pre>
+<pre>'Daniel'</pre>
 </div>
 
 </div>
@@ -487,14 +505,14 @@ window.onload = wrap_img;
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Complex data types in python</span>
 <span class="n">fruits</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;Banana&quot;</span><span class="p">:[</span><span class="mi">50</span><span class="p">,</span><span class="mi">60</span><span class="p">,</span><span class="mi">75</span><span class="p">,</span><span class="mi">99</span><span class="p">],</span>
-    <span class="s2">&quot;Apple&quot;</span><span class="p">:[</span><span class="mi">48</span><span class="p">,</span><span class="mi">86</span><span class="p">,</span><span class="mi">47</span><span class="p">,</span><span class="mi">25</span><span class="p">],</span>
-    <span class="s2">&quot;Strawberries&quot;</span><span class="p">:[</span><span class="mi">70</span><span class="p">,</span><span class="mi">80</span><span class="p">,</span><span class="mi">60</span><span class="p">,</span><span class="mi">65</span><span class="p">]</span>
+    <span class="s2">"Banana"</span><span class="p">:[</span><span class="mi">50</span><span class="p">,</span><span class="mi">60</span><span class="p">,</span><span class="mi">75</span><span class="p">,</span><span class="mi">99</span><span class="p">],</span>
+    <span class="s2">"Apple"</span><span class="p">:[</span><span class="mi">48</span><span class="p">,</span><span class="mi">86</span><span class="p">,</span><span class="mi">47</span><span class="p">,</span><span class="mi">25</span><span class="p">],</span>
+    <span class="s2">"Strawberries"</span><span class="p">:[</span><span class="mi">70</span><span class="p">,</span><span class="mi">80</span><span class="p">,</span><span class="mi">60</span><span class="p">,</span><span class="mi">65</span><span class="p">]</span>
 <span class="p">}</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">fruits</span><span class="p">[</span><span class="s2">&quot;Banana&quot;</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">fruits</span><span class="p">[</span><span class="s2">&quot;Banana&quot;</span><span class="p">][</span><span class="mi">3</span><span class="p">])</span>
-<span class="n">fruits</span><span class="p">[</span><span class="s2">&quot;Banana&quot;</span><span class="p">][</span><span class="mi">3</span><span class="p">]</span><span class="o">=</span><span class="mi">50</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">fruits</span><span class="p">[</span><span class="s2">&quot;Banana&quot;</span><span class="p">][</span><span class="mi">3</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">fruits</span><span class="p">[</span><span class="s2">"Banana"</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">fruits</span><span class="p">[</span><span class="s2">"Banana"</span><span class="p">][</span><span class="mi">3</span><span class="p">])</span>
+<span class="n">fruits</span><span class="p">[</span><span class="s2">"Banana"</span><span class="p">][</span><span class="mi">3</span><span class="p">]</span><span class="o">=</span><span class="mi">50</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">fruits</span><span class="p">[</span><span class="s2">"Banana"</span><span class="p">][</span><span class="mi">3</span><span class="p">])</span>
 </pre></div>
 
     </div>
@@ -528,12 +546,12 @@ window.onload = wrap_img;
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">fruit_qtc_consumed</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;Banana&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Fri&quot;</span><span class="p">:</span><span class="mi">90</span><span class="p">,</span> <span class="s2">&quot;Mo&quot;</span><span class="p">:</span><span class="mi">80</span><span class="p">,</span> <span class="s2">&quot;Di&quot;</span><span class="p">:</span><span class="mi">90</span><span class="p">},</span>
-    <span class="s2">&quot;Apple&quot;</span><span class="p">:{</span><span class="s2">&quot;Fri&quot;</span><span class="p">:</span><span class="mi">10</span><span class="p">,</span> <span class="s2">&quot;Mo&quot;</span><span class="p">:</span><span class="mi">12</span><span class="p">,</span> <span class="s2">&quot;Di&quot;</span><span class="p">:</span><span class="mi">13</span><span class="p">},</span>
-    <span class="s2">&quot;Strawberry&quot;</span><span class="p">:{</span><span class="s2">&quot;Fri&quot;</span><span class="p">:</span><span class="mi">47</span><span class="p">,</span> <span class="s2">&quot;Mo&quot;</span><span class="p">:</span><span class="mi">48</span><span class="p">,</span> <span class="s2">&quot;Di&quot;</span><span class="p">:</span><span class="mi">20</span><span class="p">},</span>
+    <span class="s2">"Banana"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"Fri"</span><span class="p">:</span><span class="mi">90</span><span class="p">,</span> <span class="s2">"Mo"</span><span class="p">:</span><span class="mi">80</span><span class="p">,</span> <span class="s2">"Di"</span><span class="p">:</span><span class="mi">90</span><span class="p">},</span>
+    <span class="s2">"Apple"</span><span class="p">:{</span><span class="s2">"Fri"</span><span class="p">:</span><span class="mi">10</span><span class="p">,</span> <span class="s2">"Mo"</span><span class="p">:</span><span class="mi">12</span><span class="p">,</span> <span class="s2">"Di"</span><span class="p">:</span><span class="mi">13</span><span class="p">},</span>
+    <span class="s2">"Strawberry"</span><span class="p">:{</span><span class="s2">"Fri"</span><span class="p">:</span><span class="mi">47</span><span class="p">,</span> <span class="s2">"Mo"</span><span class="p">:</span><span class="mi">48</span><span class="p">,</span> <span class="s2">"Di"</span><span class="p">:</span><span class="mi">20</span><span class="p">},</span>
 <span class="p">}</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">fruit_qtc_consumed</span><span class="p">[</span><span class="s2">&quot;Strawberry&quot;</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">fruit_qtc_consumed</span><span class="p">[</span><span class="s2">&quot;Strawberry&quot;</span><span class="p">][</span><span class="s2">&quot;Fri&quot;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">fruit_qtc_consumed</span><span class="p">[</span><span class="s2">"Strawberry"</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">fruit_qtc_consumed</span><span class="p">[</span><span class="s2">"Strawberry"</span><span class="p">][</span><span class="s2">"Fri"</span><span class="p">])</span>
 </pre></div>
 
     </div>
@@ -546,7 +564,7 @@ window.onload = wrap_img;
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>{&#39;Fri&#39;: 47, &#39;Mo&#39;: 48, &#39;Di&#39;: 20}
+<pre>{'Fri': 47, 'Mo': 48, 'Di': 20}
 47
 </pre>
 </div>
@@ -646,7 +664,7 @@ window.onload = wrap_img;
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>[&#39;Apple&#39;, &#39;Banana&#39;, &#39;Strawberry&#39;]</pre>
+<pre>['Apple', 'Banana', 'Strawberry']</pre>
 </div>
 
 </div>
@@ -679,7 +697,7 @@ window.onload = wrap_img;
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>[&#39;Strawberry&#39;, &#39;Banana&#39;, &#39;Apple&#39;]</pre>
+<pre>['Strawberry', 'Banana', 'Apple']</pre>
 </div>
 
 </div>
@@ -713,7 +731,7 @@ window.onload = wrap_img;
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>dict_items([(&#39;Banana&#39;, {&#39;Fri&#39;: 90, &#39;Mo&#39;: 80, &#39;Di&#39;: 90}), (&#39;Apple&#39;, {&#39;Fri&#39;: 10, &#39;Mo&#39;: 12, &#39;Di&#39;: 13}), (&#39;Strawberry&#39;, {&#39;Fri&#39;: 47, &#39;Mo&#39;: 48, &#39;Di&#39;: 20})])</pre>
+<pre>dict_items([('Banana', {'Fri': 90, 'Mo': 80, 'Di': 90}), ('Apple', {'Fri': 10, 'Mo': 12, 'Di': 13}), ('Strawberry', {'Fri': 47, 'Mo': 48, 'Di': 20})])</pre>
 </div>
 
 </div>
@@ -747,9 +765,9 @@ window.onload = wrap_img;
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>{&#39;Banana&#39;: {&#39;Fri&#39;: 90, &#39;Mo&#39;: 80, &#39;Di&#39;: 90},
- &#39;Apple&#39;: {&#39;Fri&#39;: 10, &#39;Mo&#39;: 12, &#39;Di&#39;: 13},
- &#39;Strawberry&#39;: {&#39;Fri&#39;: 47, &#39;Mo&#39;: 48, &#39;Di&#39;: 20}}</pre>
+<pre>{'Banana': {'Fri': 90, 'Mo': 80, 'Di': 90},
+ 'Apple': {'Fri': 10, 'Mo': 12, 'Di': 13},
+ 'Strawberry': {'Fri': 47, 'Mo': 48, 'Di': 20}}</pre>
 </div>
 
 </div>
@@ -767,7 +785,7 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">copy</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;Banana&quot;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">copy</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">"Banana"</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -782,7 +800,7 @@ window.onload = wrap_img;
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>{&#39;Fri&#39;: 90, &#39;Mo&#39;: 80, &#39;Di&#39;: 90}</pre>
+<pre>{'Fri': 90, 'Mo': 80, 'Di': 90}</pre>
 </div>
 
 </div>
@@ -800,8 +818,8 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">persons1</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Ethan&quot;</span><span class="p">:</span><span class="mi">45</span><span class="p">,</span><span class="s2">&quot;Monica&quot;</span><span class="p">:</span><span class="mi">88</span><span class="p">,</span><span class="s2">&quot;Max&quot;</span><span class="p">:</span><span class="mi">10</span><span class="p">}</span>
-<span class="n">persons2</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Ethan&quot;</span><span class="p">:</span><span class="mi">46</span><span class="p">,</span><span class="s2">&quot;Claus&quot;</span><span class="p">:</span><span class="mi">47</span><span class="p">,</span><span class="s2">&quot;Rainer&quot;</span><span class="p">:</span><span class="mi">44</span><span class="p">}</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">persons1</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"Ethan"</span><span class="p">:</span><span class="mi">45</span><span class="p">,</span><span class="s2">"Monica"</span><span class="p">:</span><span class="mi">88</span><span class="p">,</span><span class="s2">"Max"</span><span class="p">:</span><span class="mi">10</span><span class="p">}</span>
+<span class="n">persons2</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"Ethan"</span><span class="p">:</span><span class="mi">46</span><span class="p">,</span><span class="s2">"Claus"</span><span class="p">:</span><span class="mi">47</span><span class="p">,</span><span class="s2">"Rainer"</span><span class="p">:</span><span class="mi">44</span><span class="p">}</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">persons1</span><span class="p">)</span>
 <span class="n">persons1</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">persons2</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">persons1</span><span class="p">)</span>
@@ -817,8 +835,8 @@ window.onload = wrap_img;
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>{&#39;Ethan&#39;: 45, &#39;Monica&#39;: 88, &#39;Max&#39;: 10}
-{&#39;Ethan&#39;: 46, &#39;Monica&#39;: 88, &#39;Max&#39;: 10, &#39;Claus&#39;: 47, &#39;Rainer&#39;: 44}
+<pre>{'Ethan': 45, 'Monica': 88, 'Max': 10}
+{'Ethan': 46, 'Monica': 88, 'Max': 10, 'Claus': 47, 'Rainer': 44}
 </pre>
 </div>
 </div>
@@ -888,7 +906,7 @@ window.onload = wrap_img;
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Sets</span>
-<span class="n">set_string</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Emma&quot;</span><span class="p">,</span> <span class="s2">&quot;Olivia&quot;</span><span class="p">,</span> <span class="s2">&quot;Ava&quot;</span><span class="p">,</span> <span class="s2">&quot;Mia&quot;</span><span class="p">}</span>
+<span class="n">set_string</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"Emma"</span><span class="p">,</span> <span class="s2">"Olivia"</span><span class="p">,</span> <span class="s2">"Ava"</span><span class="p">,</span> <span class="s2">"Mia"</span><span class="p">}</span>
 <span class="n">set_string</span>
 </pre></div>
 
@@ -904,7 +922,7 @@ window.onload = wrap_img;
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>{&#39;Ava&#39;, &#39;Emma&#39;, &#39;Mia&#39;, &#39;Olivia&#39;}</pre>
+<pre>{'Ava', 'Emma', 'Mia', 'Olivia'}</pre>
 </div>
 
 </div>
@@ -936,7 +954,7 @@ window.onload = wrap_img;
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>{&#39;Ava&#39;, &#39;Mia&#39;, &#39;Emma&#39;, &#39;Olivia&#39;}
+<pre>{'Ava', 'Mia', 'Emma', 'Olivia'}
 </pre>
 </div>
 </div>
@@ -971,7 +989,7 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">mixed_set</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Emmma&quot;</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">,</span> <span class="kc">True</span><span class="p">,(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">)}</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">mixed_set</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"Emmma"</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">,</span> <span class="kc">True</span><span class="p">,(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">)}</span>
 <span class="c1">#Lists are not allowed</span>
 </pre></div>
 
@@ -989,7 +1007,7 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">student_set</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Emma&quot;</span><span class="p">,</span> <span class="s2">&quot;Marc&quot;</span><span class="p">,</span> <span class="s2">&quot;Janine&quot;</span><span class="p">,</span> <span class="s2">&quot;Emma&quot;</span><span class="p">}</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">student_set</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"Emma"</span><span class="p">,</span> <span class="s2">"Marc"</span><span class="p">,</span> <span class="s2">"Janine"</span><span class="p">,</span> <span class="s2">"Emma"</span><span class="p">}</span>
 <span class="n">student_set</span>
 <span class="c1"># duplicates are eliminated</span>
 </pre></div>
@@ -1006,7 +1024,7 @@ window.onload = wrap_img;
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>{&#39;Emma&#39;, &#39;Janine&#39;, &#39;Marc&#39;}</pre>
+<pre>{'Emma', 'Janine', 'Marc'}</pre>
 </div>
 
 </div>
@@ -1045,7 +1063,7 @@ window.onload = wrap_img;
 <span class="ansi-green-fg">      2</span> 
 <span class="ansi-green-fg">      3</span> 
 
-<span class="ansi-red-intense-fg ansi-bold">TypeError</span>: &#39;set&#39; object is not subscriptable</pre>
+<span class="ansi-red-intense-fg ansi-bold">TypeError</span>: 'set' object is not subscriptable</pre>
 </div>
 </div>
 
@@ -1062,7 +1080,7 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">student_set</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;Felix&quot;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">student_set</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">"Felix"</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -1127,7 +1145,7 @@ window.onload = wrap_img;
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&#39;Marc&#39;</pre>
+<pre>'Marc'</pre>
 </div>
 
 </div>
@@ -1145,8 +1163,8 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">student_set</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s2">&quot;Felix&quot;</span><span class="p">)</span>
-<span class="n">student_set</span><span class="o">.</span><span class="n">discard</span><span class="p">(</span><span class="s2">&quot;Felix&quot;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">student_set</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s2">"Felix"</span><span class="p">)</span>
+<span class="n">student_set</span><span class="o">.</span><span class="n">discard</span><span class="p">(</span><span class="s2">"Felix"</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -1315,9 +1333,9 @@ window.onload = wrap_img;
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Nested Lists</span>
-<span class="n">car_matrix</span> <span class="o">=</span> <span class="p">[[</span><span class="s2">&quot;Hennessey Venom GT&quot;</span><span class="p">,</span> <span class="mi">1244</span><span class="p">],</span>
-              <span class="p">[</span><span class="s2">&quot;SSC Ultimate Aero&quot;</span><span class="p">,</span> <span class="mi">1287</span><span class="p">],</span>
-              <span class="p">[</span><span class="s2">&quot;Zenvo ST1&quot;</span><span class="p">,</span> <span class="mi">1100</span><span class="p">]]</span>
+<span class="n">car_matrix</span> <span class="o">=</span> <span class="p">[[</span><span class="s2">"Hennessey Venom GT"</span><span class="p">,</span> <span class="mi">1244</span><span class="p">],</span>
+              <span class="p">[</span><span class="s2">"SSC Ultimate Aero"</span><span class="p">,</span> <span class="mi">1287</span><span class="p">],</span>
+              <span class="p">[</span><span class="s2">"Zenvo ST1"</span><span class="p">,</span> <span class="mi">1100</span><span class="p">]]</span>
 <span class="n">car_matrix</span>
 </pre></div>
 
@@ -1333,9 +1351,9 @@ window.onload = wrap_img;
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>[[&#39;Hennessey Venom GT&#39;, 1244],
- [&#39;SSC Ultimate Aero&#39;, 1287],
- [&#39;Zenvo ST1&#39;, 1100]]</pre>
+<pre>[['Hennessey Venom GT', 1244],
+ ['SSC Ultimate Aero', 1287],
+ ['Zenvo ST1', 1100]]</pre>
 </div>
 
 </div>
@@ -1434,7 +1452,7 @@ window.onload = wrap_img;
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&#39;SSC Ultimate Aero&#39;</pre>
+<pre>'SSC Ultimate Aero'</pre>
 </div>
 
 </div>
@@ -1467,7 +1485,7 @@ window.onload = wrap_img;
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>[&#39;SSC Ultimate Aero&#39;, 1287]</pre>
+<pre>['SSC Ultimate Aero', 1287]</pre>
 </div>
 
 </div>
@@ -1500,7 +1518,7 @@ window.onload = wrap_img;
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>[&#39;SSC Ultimate Aero&#39;, 1287]</pre>
+<pre>['SSC Ultimate Aero', 1287]</pre>
 </div>
 
 </div>
@@ -1519,7 +1537,7 @@ window.onload = wrap_img;
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Conversion of Lists</span>
-<span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Leo&quot;</span><span class="p">,</span><span class="mi">18</span><span class="p">,</span><span class="s2">&quot;Aaron&quot;</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="s2">&quot;Max&quot;</span><span class="p">,</span><span class="mi">25</span><span class="p">,</span><span class="s2">&quot;Sofi&quot;</span><span class="p">,</span><span class="mi">22</span><span class="p">,</span><span class="s2">&quot;Marques&quot;</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="s2">&quot;Julia&quot;</span><span class="p">,</span><span class="mi">91</span><span class="p">,]</span>
+<span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"Leo"</span><span class="p">,</span><span class="mi">18</span><span class="p">,</span><span class="s2">"Aaron"</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="s2">"Max"</span><span class="p">,</span><span class="mi">25</span><span class="p">,</span><span class="s2">"Sofi"</span><span class="p">,</span><span class="mi">22</span><span class="p">,</span><span class="s2">"Marques"</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="s2">"Julia"</span><span class="p">,</span><span class="mi">91</span><span class="p">,]</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">my_list</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">tuple</span><span class="p">(</span><span class="n">my_list</span><span class="p">))</span>
 <span class="c1"># tuple is immutable</span>
@@ -1535,8 +1553,8 @@ window.onload = wrap_img;
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>[&#39;Leo&#39;, 18, &#39;Aaron&#39;, 15, &#39;Max&#39;, 25, &#39;Sofi&#39;, 22, &#39;Marques&#39;, 2, &#39;Julia&#39;, 91]
-(&#39;Leo&#39;, 18, &#39;Aaron&#39;, 15, &#39;Max&#39;, 25, &#39;Sofi&#39;, 22, &#39;Marques&#39;, 2, &#39;Julia&#39;, 91)
+<pre>['Leo', 18, 'Aaron', 15, 'Max', 25, 'Sofi', 22, 'Marques', 2, 'Julia', 91]
+('Leo', 18, 'Aaron', 15, 'Max', 25, 'Sofi', 22, 'Marques', 2, 'Julia', 91)
 </pre>
 </div>
 </div>
@@ -1554,7 +1572,7 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">my_list1</span> <span class="o">=</span> <span class="p">[[</span><span class="s2">&quot;Leo&quot;</span><span class="p">,</span><span class="mi">18</span><span class="p">],[</span><span class="s2">&quot;Aaron&quot;</span><span class="p">,</span><span class="mi">48</span><span class="p">],[</span><span class="s2">&quot;Max&quot;</span><span class="p">,</span><span class="mi">25</span><span class="p">],[</span><span class="s2">&quot;Sofi&quot;</span><span class="p">,</span><span class="mi">22</span><span class="p">],[</span><span class="s2">&quot;Marques&quot;</span><span class="p">,</span><span class="mi">2</span><span class="p">],[</span><span class="s2">&quot;Julia&quot;</span><span class="p">,</span><span class="mi">91</span><span class="p">]]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">my_list1</span> <span class="o">=</span> <span class="p">[[</span><span class="s2">"Leo"</span><span class="p">,</span><span class="mi">18</span><span class="p">],[</span><span class="s2">"Aaron"</span><span class="p">,</span><span class="mi">48</span><span class="p">],[</span><span class="s2">"Max"</span><span class="p">,</span><span class="mi">25</span><span class="p">],[</span><span class="s2">"Sofi"</span><span class="p">,</span><span class="mi">22</span><span class="p">],[</span><span class="s2">"Marques"</span><span class="p">,</span><span class="mi">2</span><span class="p">],[</span><span class="s2">"Julia"</span><span class="p">,</span><span class="mi">91</span><span class="p">]]</span>
 <span class="nb">tuple</span><span class="p">(</span><span class="n">my_list1</span><span class="p">)</span>
 </pre></div>
 
@@ -1570,12 +1588,12 @@ window.onload = wrap_img;
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>([&#39;Leo&#39;, 18],
- [&#39;Aaron&#39;, 48],
- [&#39;Max&#39;, 25],
- [&#39;Sofi&#39;, 22],
- [&#39;Marques&#39;, 2],
- [&#39;Julia&#39;, 91])</pre>
+<pre>(['Leo', 18],
+ ['Aaron', 48],
+ ['Max', 25],
+ ['Sofi', 22],
+ ['Marques', 2],
+ ['Julia', 91])</pre>
 </div>
 
 </div>
@@ -1610,7 +1628,7 @@ window.onload = wrap_img;
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>[&#39;Leo&#39;, 18, &#39;Aaron&#39;, 15, &#39;Max&#39;, 25, &#39;Sofi&#39;, 22, &#39;Marques&#39;, 2, &#39;Julia&#39;, 91]</pre>
+<pre>['Leo', 18, 'Aaron', 15, 'Max', 25, 'Sofi', 22, 'Marques', 2, 'Julia', 91]</pre>
 </div>
 
 </div>
@@ -1677,7 +1695,15 @@ window.onload = wrap_img;
 
 
 
-  </div><a class="u-url" href="/DataScienceBlog/2020/06/21/comp-dt-DictionaryAndSetsInPython.html" hidden></a>
+  </div><!-- from https://github.com/utterance/utterances -->
+<script src="https://utteranc.es/client.js"
+        repo="Elydora/DataScienceBlog"
+        issue-term="title"
+        label="blogpost-comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script><a class="u-url" href="/DataScienceBlog/datatypes/jupyter/percipio/2020/06/21/comp-dt-DictionaryAndSetsInPython.html" hidden></a>
 </article>
       </div>
     </main><footer class="site-footer h-card">
