@@ -2,9 +2,10 @@
 <html lang="en"><head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.6.1 -->
 <title>Fundamental Data Structures | Yet Another Data Science Blog</title>
-<meta name="generator" content="Jekyll v4.0.0" />
+<meta name="generator" content="Jekyll v4.1.1" />
 <meta property="og:title" content="Fundamental Data Structures" />
 <meta name="author" content="Felix" />
 <meta property="og:locale" content="en_US" />
@@ -16,27 +17,10 @@
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2020-06-22T00:00:00-05:00" />
 <script type="application/ld+json">
-{"mainEntityOfPage":{"@type":"WebPage","@id":"https://elydora.github.io/DataScienceBlog/datastructures/jupyter/percipio/2020/06/22/Fundamental-Data-Structures.html"},"author":{"@type":"Person","name":"Felix"},"description":"Example Implementations using Jupyter Notebooks.","@type":"BlogPosting","url":"https://elydora.github.io/DataScienceBlog/datastructures/jupyter/percipio/2020/06/22/Fundamental-Data-Structures.html","headline":"Fundamental Data Structures","dateModified":"2020-06-22T00:00:00-05:00","datePublished":"2020-06-22T00:00:00-05:00","@context":"https://schema.org"}</script>
+{"url":"https://elydora.github.io/DataScienceBlog/datastructures/jupyter/percipio/2020/06/22/Fundamental-Data-Structures.html","@type":"BlogPosting","headline":"Fundamental Data Structures","dateModified":"2020-06-22T00:00:00-05:00","datePublished":"2020-06-22T00:00:00-05:00","author":{"@type":"Person","name":"Felix"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://elydora.github.io/DataScienceBlog/datastructures/jupyter/percipio/2020/06/22/Fundamental-Data-Structures.html"},"description":"Example Implementations using Jupyter Notebooks.","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
-<link rel="stylesheet" href="/DataScienceBlog/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://elydora.github.io/DataScienceBlog/feed.xml" title="Yet Another Data Science Blog" /><link rel="shortcut icon" type="image/x-icon" href="/DataScienceBlog/images/favicon.ico"><!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>Fundamental Data Structures | Yet Another Data Science Blog</title>
-<meta name="generator" content="Jekyll v4.0.0" />
-<meta property="og:title" content="Fundamental Data Structures" />
-<meta name="author" content="Felix" />
-<meta property="og:locale" content="en_US" />
-<meta name="description" content="Example Implementations using Jupyter Notebooks." />
-<meta property="og:description" content="Example Implementations using Jupyter Notebooks." />
-<link rel="canonical" href="https://elydora.github.io/DataScienceBlog/datastructures/jupyter/percipio/2020/06/22/Fundamental-Data-Structures.html" />
-<meta property="og:url" content="https://elydora.github.io/DataScienceBlog/datastructures/jupyter/percipio/2020/06/22/Fundamental-Data-Structures.html" />
-<meta property="og:site_name" content="Yet Another Data Science Blog" />
-<meta property="og:type" content="article" />
-<meta property="article:published_time" content="2020-06-22T00:00:00-05:00" />
-<script type="application/ld+json">
-{"mainEntityOfPage":{"@type":"WebPage","@id":"https://elydora.github.io/DataScienceBlog/datastructures/jupyter/percipio/2020/06/22/Fundamental-Data-Structures.html"},"author":{"@type":"Person","name":"Felix"},"description":"Example Implementations using Jupyter Notebooks.","@type":"BlogPosting","url":"https://elydora.github.io/DataScienceBlog/datastructures/jupyter/percipio/2020/06/22/Fundamental-Data-Structures.html","headline":"Fundamental Data Structures","dateModified":"2020-06-22T00:00:00-05:00","datePublished":"2020-06-22T00:00:00-05:00","@context":"https://schema.org"}</script>
-<!-- End Jekyll SEO tag -->
-
-<link href="https://unpkg.com/@primer/css/dist/primer.css" rel="stylesheet" />
-<link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css"><link type="application/atom+xml" rel="alternate" href="https://elydora.github.io/DataScienceBlog/feed.xml" title="Yet Another Data Science Blog" />
+<link rel="stylesheet" href="/DataScienceBlog/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://elydora.github.io/DataScienceBlog/feed.xml" title="Yet Another Data Science Blog" /><link rel="shortcut icon" type="image/x-icon" href="/DataScienceBlog/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
 
 <script>
 function wrap_img(fn) {
@@ -67,7 +51,8 @@ window.onload = wrap_img;
     elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
     });
 </script>
-</head><body><header class="site-header">
+</head>
+<body><header class="site-header">
 
   <div class="wrapper"><a class="site-title" rel="author" href="/DataScienceBlog/">Yet Another Data Science Blog</a><nav class="site-nav">
         <input type="checkbox" id="nav-trigger" class="nav-trigger" />
@@ -95,7 +80,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      3 min read
+      2 min read
     
 </span></p>
 
@@ -152,19 +137,11 @@ window.onload = wrap_img;
     
     
 <div class="cell border-box-sizing code_cell rendered">
-
-</div>
-    
-
-    
-    
-<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># make common operations fast (fast loading / unloading of complex objects)</span>
-<span class="c1"># make difficult operations possible</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># make difficult operations possible</span>
 <span class="c1"># occupy less space and still represent the complexity of information and</span>
 <span class="c1"># its interrelationships in an intuitive way</span>
 <span class="c1"># data structures and algorithms go hand-in-hand</span>
@@ -205,8 +182,7 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Measuring Performance metrics:</span>
-<span class="c1"># Time (# of operations / amount of processing)</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Time (# of operations / amount of processing)</span>
 <span class="c1"># Space (make best use of available space, memory and disk space needed)</span>
 <span class="c1"># Network (overall network bandwidth, network speed)</span>
 <span class="c1"># efficient = uses fewer resources along all these axes</span>
@@ -247,8 +223,7 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Basic Operations</span>
-<span class="c1"># Read - Write - Assignment - Test</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Read - Write - Assignment - Test</span>
 <span class="c1"># do not worry about the number of operations</span>
 <span class="c1"># be worried how that number changes is based on the input size</span>
 <span class="c1"># that is how performance changes based on input size</span>
@@ -271,8 +246,7 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Big-O Notation</span>
-<span class="c1"># Represents the complexity of an algorithm</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Represents the complexity of an algorithm</span>
 <span class="c1"># An algorithm whose complexity does not change with the input size is O(1)</span>
 <span class="c1"># -&gt; the algorithm is said to have constant time complexity</span>
 <span class="c1"># The algorithm is said to have constant time complexity</span>
@@ -293,8 +267,7 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># The complexity of an algorithm is O(N) if the time taken by the algorithm increases linearly when N increases</span>
-<span class="c1"># The complexity of an algorithm is O(N^2) if the time taken by the algorithm increases quadratically when N increases</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># The complexity of an algorithm is O(N^2) if the time taken by the algorithm increases quadratically when N increases</span>
 <span class="c1"># Lower order terms and constants do not matter while expressing complexity</span>
 <span class="c1"># O(N^2 + 1000) is equivalent to O(N^2) -&gt; N is assumed very large</span>
 <span class="c1"># O(N^2+N) is equivalent to O(N^2)</span>
@@ -314,7 +287,7 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Fastest O(1) &lt; O(N) &lt; O(N^2) &lt; O(N^3) Slowest</span>
+<div class=" highlight hl-ipython2"><pre><span></span> 
 </pre></div>
 
     </div>
@@ -331,8 +304,7 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Linked Lists: [Data|Pointer]; Pointer points to the next element, or null</span>
-<span class="c1"># Header points to the first element</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Header points to the first element</span>
 <span class="c1"># Best way to count is to increment/decrement a counter at every list operation</span>
 <span class="c1"># Adding: At the end/ in between -&gt; O(N); at the beginning -&gt; O(1)</span>
 <span class="c1"># Deleting: At the end/ in between -&gt; O(N); at the beginning -&gt; O(1)</span>
@@ -354,8 +326,7 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Stacks:</span>
-<span class="c1"># Common operations (add, remove, peek) have O(1) complexity</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Common operations (add, remove, peek) have O(1) complexity</span>
 <span class="c1"># Can be implemented using a linked list</span>
 <span class="c1"># LIFO principle</span>
 <span class="c1"># Insertion and deletion at the same end</span>
@@ -375,8 +346,7 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Queues:</span>
-<span class="c1"># Common operations (add, remove, peek) have O(1) complexity</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Common operations (add, remove, peek) have O(1) complexity</span>
 <span class="c1"># Can be implemented using a linked list</span>
 <span class="c1"># FIFO principle</span>
 <span class="c1"># Insertion and deletion at opposite ends</span>
@@ -396,7 +366,7 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Peek - Value of the most recently inserted element</span>
+<div class=" highlight hl-ipython2"><pre><span></span> 
 </pre></div>
 
     </div>
