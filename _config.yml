@@ -7,7 +7,7 @@
 # https://learnxinyminutes.com/docs/yaml/
 
 title: Yet Another Data Science Blog
-description: just some data science tests
+description: various data science posts
 github_username: Elydora
 # you can comment the below line out if your repo name is not different than your baseurl
 github_repo: "DataScienceBlog"
@@ -40,7 +40,7 @@ baseurl: "/DataScienceBlog" # the subpath of your site, e.g. "/blog".
 minima:
   social_links:
     twitter: fastdotai
-    github: fastai
+    github: Elydora
 
 # Set this to true to get LaTeX math equation support
 use_math: 
