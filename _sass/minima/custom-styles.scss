@@ -9,5 +9,29 @@
 
 @import "minima/dark-mode";
 
+.site-header {
+    font-family: 'DotGothic16', sans-serif;
+    border: none;
+}
+
+.site-header a:hover {
+    color: $med-emph !important;
+    text-decoration: none !important;
+}
+
+.home {
+    font-family: 'Source Sans Pro', sans-serif !important;
+}
+
+.page-content {
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.site-footer {
+    font-family: 'DotGothic16', sans-serif;
+    border: none;
+}
+
 // If you want to turn off dark background for syntax highlighting, comment or delete the below line.
-// @import "minima/fastpages-dracula-highlight";
+@import "minima/fastpages-dracula-highlight";
+
