@@ -1,15 +1,6 @@
-/*-----------------------------------*/
-/*--- IMPORT STYLES FOR FASTPAGES ---*/
-@import "minima/fastpages-styles";   
-
-
-
-/*-----------------------------------*/
-/*----- ADD YOUR STYLES BELOW -------*/
-
-// If you want to turn off dark background for syntax highlighting, comment or delete the below line.
-@import "minima/fastpages-dracula-highlight"; 
-
+// override default minima variables
+// width of the content area
+// can be set as "px" or "%"
 $content-width: 1000px;
 $on-palm: 800px;
 $on-laptop: 1000px;
