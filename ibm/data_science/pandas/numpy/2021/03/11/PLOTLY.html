@@ -80,7 +80,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      1 min read
+      2 min read
     
 </span></p>
 
@@ -144,12 +144,44 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"Hello!"</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Hello!
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">HTML</span><span class="p">,</span> <span class="n">display</span>
 <span class="kn">import</span> <span class="nn">plotly.express</span> <span class="k">as</span> <span class="nn">px</span>
 <span class="kn">import</span> <span class="nn">altair</span> <span class="k">as</span> <span class="nn">alt</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">iris</span><span class="p">()</span>
 <span class="n">display</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
 <span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">"sepal_width"</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">"sepal_length"</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">renderer</span><span class="o">=</span><span class="s1">'png'</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -240,6 +272,120 @@ window.onload = wrap_img;
 </div>
 </div>
 
+</div>
+
+<div class="output_area">
+
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">ValueError</span>                                Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-7-f8a1eeacf9c4&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-intense-fg ansi-bold">      5</span> display<span class="ansi-blue-fg">(</span>df<span class="ansi-blue-fg">.</span>head<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">      6</span> fig <span class="ansi-blue-fg">=</span> px<span class="ansi-blue-fg">.</span>scatter<span class="ansi-blue-fg">(</span>df<span class="ansi-blue-fg">,</span> x<span class="ansi-blue-fg">=</span><span class="ansi-blue-fg">"sepal_width"</span><span class="ansi-blue-fg">,</span> y<span class="ansi-blue-fg">=</span><span class="ansi-blue-fg">"sepal_length"</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-fg">----&gt; 7</span><span class="ansi-red-fg"> </span>fig<span class="ansi-blue-fg">.</span>show<span class="ansi-blue-fg">(</span>renderer<span class="ansi-blue-fg">=</span><span class="ansi-blue-fg">'png'</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">      8</span> 
+
+<span class="ansi-green-fg">~/opt/miniconda3/lib/python3.8/site-packages/plotly/basedatatypes.py</span> in <span class="ansi-cyan-fg">show</span><span class="ansi-blue-fg">(self, *args, **kwargs)</span>
+<span class="ansi-green-intense-fg ansi-bold">   3395</span>         <span class="ansi-green-fg">import</span> plotly<span class="ansi-blue-fg">.</span>io <span class="ansi-green-fg">as</span> pio
+<span class="ansi-green-intense-fg ansi-bold">   3396</span> 
+<span class="ansi-green-fg">-&gt; 3397</span><span class="ansi-red-fg">         </span><span class="ansi-green-fg">return</span> pio<span class="ansi-blue-fg">.</span>show<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">*</span>args<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">**</span>kwargs<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">   3398</span> 
+<span class="ansi-green-intense-fg ansi-bold">   3399</span>     <span class="ansi-green-fg">def</span> to_json<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">*</span>args<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">**</span>kwargs<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
+
+<span class="ansi-green-fg">~/opt/miniconda3/lib/python3.8/site-packages/plotly/io/_renderers.py</span> in <span class="ansi-cyan-fg">show</span><span class="ansi-blue-fg">(fig, renderer, validate, **kwargs)</span>
+<span class="ansi-green-intense-fg ansi-bold">    387</span> 
+<span class="ansi-green-intense-fg ansi-bold">    388</span>     <span class="ansi-red-fg"># Mimetype renderers</span>
+<span class="ansi-green-fg">--&gt; 389</span><span class="ansi-red-fg">     </span>bundle <span class="ansi-blue-fg">=</span> renderers<span class="ansi-blue-fg">.</span>_build_mime_bundle<span class="ansi-blue-fg">(</span>fig_dict<span class="ansi-blue-fg">,</span> renderers_string<span class="ansi-blue-fg">=</span>renderer<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">**</span>kwargs<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    390</span>     <span class="ansi-green-fg">if</span> bundle<span class="ansi-blue-fg">:</span>
+<span class="ansi-green-intense-fg ansi-bold">    391</span>         <span class="ansi-green-fg">if</span> <span class="ansi-green-fg">not</span> ipython_display<span class="ansi-blue-fg">:</span>
+
+<span class="ansi-green-fg">~/opt/miniconda3/lib/python3.8/site-packages/plotly/io/_renderers.py</span> in <span class="ansi-cyan-fg">_build_mime_bundle</span><span class="ansi-blue-fg">(self, fig_dict, renderers_string, **kwargs)</span>
+<span class="ansi-green-intense-fg ansi-bold">    295</span>                         setattr<span class="ansi-blue-fg">(</span>renderer<span class="ansi-blue-fg">,</span> k<span class="ansi-blue-fg">,</span> v<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    296</span> 
+<span class="ansi-green-fg">--&gt; 297</span><span class="ansi-red-fg">                 </span>bundle<span class="ansi-blue-fg">.</span>update<span class="ansi-blue-fg">(</span>renderer<span class="ansi-blue-fg">.</span>to_mimebundle<span class="ansi-blue-fg">(</span>fig_dict<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    298</span> 
+<span class="ansi-green-intense-fg ansi-bold">    299</span>         <span class="ansi-green-fg">return</span> bundle
+
+<span class="ansi-green-fg">~/opt/miniconda3/lib/python3.8/site-packages/plotly/io/_base_renderers.py</span> in <span class="ansi-cyan-fg">to_mimebundle</span><span class="ansi-blue-fg">(self, fig_dict)</span>
+<span class="ansi-green-intense-fg ansi-bold">    125</span> 
+<span class="ansi-green-intense-fg ansi-bold">    126</span>     <span class="ansi-green-fg">def</span> to_mimebundle<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">,</span> fig_dict<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-fg">--&gt; 127</span><span class="ansi-red-fg">         image_bytes = to_image(
+</span><span class="ansi-green-intense-fg ansi-bold">    128</span>             fig_dict<span class="ansi-blue-fg">,</span>
+<span class="ansi-green-intense-fg ansi-bold">    129</span>             format<span class="ansi-blue-fg">=</span>self<span class="ansi-blue-fg">.</span>format<span class="ansi-blue-fg">,</span>
+
+<span class="ansi-green-fg">~/opt/miniconda3/lib/python3.8/site-packages/plotly/io/_kaleido.py</span> in <span class="ansi-cyan-fg">to_image</span><span class="ansi-blue-fg">(fig, format, width, height, scale, validate, engine)</span>
+<span class="ansi-green-intense-fg ansi-bold">    101</span>         <span class="ansi-green-fg">from</span> <span class="ansi-blue-fg">.</span>_orca <span class="ansi-green-fg">import</span> to_image <span class="ansi-green-fg">as</span> to_image_orca
+<span class="ansi-green-intense-fg ansi-bold">    102</span> 
+<span class="ansi-green-fg">--&gt; 103</span><span class="ansi-red-fg">         return to_image_orca(
+</span><span class="ansi-green-intense-fg ansi-bold">    104</span>             fig<span class="ansi-blue-fg">,</span>
+<span class="ansi-green-intense-fg ansi-bold">    105</span>             format<span class="ansi-blue-fg">=</span>format<span class="ansi-blue-fg">,</span>
+
+<span class="ansi-green-fg">~/opt/miniconda3/lib/python3.8/site-packages/plotly/io/_orca.py</span> in <span class="ansi-cyan-fg">to_image</span><span class="ansi-blue-fg">(fig, format, width, height, scale, validate)</span>
+<span class="ansi-green-intense-fg ansi-bold">   1533</span>     <span class="ansi-red-fg"># Make sure orca sever is running</span>
+<span class="ansi-green-intense-fg ansi-bold">   1534</span>     <span class="ansi-red-fg"># -------------------------------</span>
+<span class="ansi-green-fg">-&gt; 1535</span><span class="ansi-red-fg">     </span>ensure_server<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">   1536</span> 
+<span class="ansi-green-intense-fg ansi-bold">   1537</span>     <span class="ansi-red-fg"># Handle defaults</span>
+
+<span class="ansi-green-fg">~/opt/miniconda3/lib/python3.8/site-packages/plotly/io/_orca.py</span> in <span class="ansi-cyan-fg">ensure_server</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-intense-fg ansi-bold">   1388</span>         <span class="ansi-red-fg"># Validate orca executable only if server_url is not provided</span>
+<span class="ansi-green-intense-fg ansi-bold">   1389</span>         <span class="ansi-green-fg">if</span> status<span class="ansi-blue-fg">.</span>state <span class="ansi-blue-fg">==</span> <span class="ansi-blue-fg">"unvalidated"</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-fg">-&gt; 1390</span><span class="ansi-red-fg">             </span>validate_executable<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">   1391</span>         <span class="ansi-red-fg"># Acquire lock to make sure that we keep the properties of orca_state</span>
+<span class="ansi-green-intense-fg ansi-bold">   1392</span>         <span class="ansi-red-fg"># consistent across threads</span>
+
+<span class="ansi-green-fg">~/opt/miniconda3/lib/python3.8/site-packages/plotly/io/_orca.py</span> in <span class="ansi-cyan-fg">validate_executable</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-intense-fg ansi-bold">   1074</span> 
+<span class="ansi-green-intense-fg ansi-bold">   1075</span>     <span class="ansi-green-fg">if</span> executable <span class="ansi-green-fg">is</span> <span class="ansi-green-fg">None</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-fg">-&gt; 1076</span><span class="ansi-red-fg">         raise ValueError(
+</span><span class="ansi-green-intense-fg ansi-bold">   1077</span>             """
+<span class="ansi-green-intense-fg ansi-bold">   1078</span> The orca executable <span class="ansi-green-fg">is</span> required to export figures <span class="ansi-green-fg">as</span> static images<span class="ansi-blue-fg">,</span>
+
+<span class="ansi-red-fg">ValueError</span>: 
+The orca executable is required to export figures as static images,
+but it could not be found on the system path.
+
+Searched for executable 'orca' on the following path:
+    /opt/homebrew/opt/libpq/bin
+    /opt/homebrew/opt/openssl@1.1/bin
+    /Users/fichte/opt/miniconda3/bin
+    /Users/fichte/opt/miniconda3/condabin
+    /opt/homebrew/bin
+    /opt/homebrew/sbin
+    /Library/Frameworks/Python.framework/Versions/3.9/bin
+    /usr/local/bin
+    /usr/bin
+    /bin
+    /usr/sbin
+    /sbin
+    /Library/Apple/usr/bin
+
+If you haven't installed orca yet, you can do so using conda as follows:
+
+    $ conda install -c plotly plotly-orca
+
+Alternatively, see other installation methods in the orca project README at
+https://github.com/plotly/orca
+
+After installation is complete, no further configuration should be needed.
+
+If you have installed orca, then for some reason plotly.py was unable to
+locate it. In this case, set the `plotly.io.orca.config.executable`
+property to the full path of your orca executable. For example:
+
+    &gt;&gt;&gt; plotly.io.orca.config.executable = '/path/to/orca'
+
+After updating this executable property, try the export operation again.
+If it is successful then you may want to save this configuration so that it
+will be applied automatically in future sessions. You can do this as follows:
+
+    &gt;&gt;&gt; plotly.io.orca.config.save()
+
+If you're still having trouble, feel free to ask for help on the forums at
+https://community.plot.ly/c/api/python
+</pre>
+</div>
 </div>
 
 </div>
