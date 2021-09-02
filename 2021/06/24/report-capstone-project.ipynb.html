@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Report Capstone Project.ipynb | Yet Another Data Science Blog</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Report Capstone Project.ipynb" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="1 Introduction - 2 -" />
+<meta property="og:description" content="1 Introduction - 2 -" />
+<link rel="canonical" href="https://elydora.github.io/DataScienceBlog/2021/06/24/report-capstone-project.ipynb.html" />
+<meta property="og:url" content="https://elydora.github.io/DataScienceBlog/2021/06/24/report-capstone-project.ipynb.html" />
+<meta property="og:site_name" content="Yet Another Data Science Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-06-24T00:00:00-05:00" />
+<script type="application/ld+json">
+{"description":"1 Introduction - 2 -","url":"https://elydora.github.io/DataScienceBlog/2021/06/24/report-capstone-project.ipynb.html","@type":"BlogPosting","headline":"Report Capstone Project.ipynb","dateModified":"2021-06-24T00:00:00-05:00","datePublished":"2021-06-24T00:00:00-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://elydora.github.io/DataScienceBlog/2021/06/24/report-capstone-project.ipynb.html"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/DataScienceBlog/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://elydora.github.io/DataScienceBlog/feed.xml" title="Yet Another Data Science Blog" /><link rel="shortcut icon" type="image/x-icon" href="/DataScienceBlog/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/DataScienceBlog/">Yet Another Data Science Blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/DataScienceBlog/about/">About Me</a><a class="page-link" href="/DataScienceBlog/search/">Search</a><a class="page-link" href="/DataScienceBlog/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Report Capstone Project.ipynb</h1><p class="post-meta post-meta-title"><time class="dt-published" datetime="2021-06-24T00:00:00-05:00" itemprop="datePublished">
+        Jun 24, 2021
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      15 min read
+    
+</span></p>
+
+    
+
+    </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p><a href="#introduction">1 Introduction - 2 -</a></p>
+
+<p><a href="#data">2 Data - 3 -</a></p>
+
+<p><a href="#methodology">3 Methodology - 4 -</a></p>
+
+<p><a href="#initial-analysis">3.1 Initial Analysis - 5 -</a></p>
+
+<p><a href="#clustering-the-dataset">3.2 Clustering the Dataset - 7 -</a></p>
+
+<p><a href="#selecting-a-cluster-and-three-of-the-best-fitting-areas">3.3 Selecting a Cluster and three of the best fitting areas - 8 -</a></p>
+
+<p><a href="#exploring-the-local-food-venues-and-identifying-market-gaps">3.4 Exploring the local Food Venues and identifying Market Gaps - 10 -</a></p>
+
+<p><a href="#results-and-discussion">4 Results and Discussion - 11 -</a></p>
+
+<p><a href="#conclusion">5 Conclusion - 12 -</a></p>
+
+<h1>**</h1>
+<p>**</p>
+
+<h1 id="introduction">Introduction</h1>
+
+<p>In this capstone project I will try to give a recommendation on where to open a<br />
+restaurant in Los Angeles County, CA. The location will be a community or area in the county, that is defined by its postal code. In addition, there shall be given a<br />
+recommendation of which type of food venue could be opened, based on<br />
+existing restaurants in the area and generally popular restaurants in the<br />
+whole county.</p>
+
+<p>The decision on where to open a restaurant can be based on many factors,<br />
+depending on the target group. For example, one could look for very dense<br />
+populated areas, or areas with lots of wealthy citizens. Even the median age<br />
+of the population can play a role. Because of this, I will include census and economic data into the analysis.</p>
+
+<p>I will make a final recommendation based on the following conditions, that:</p>
+
+<ul>
+  <li>
+    <p>Find the area with a good balance between number of possible customers<br />
+and a high median income (population is slightly more important than income).</p>
+  </li>
+  <li>
+    <p>The type of restaurant will be determined by the most recommended categories<br />
+of food venue in Los Angeles County, CA and the number of already existing<br />
+venues in the area, grouped by their categories.</p>
+  </li>
+</ul>
+
+<h1 id="data">Data</h1>
+
+<p>The basis for the analysis will be the 2010 census data of all zip codes in Los Angeles County, CA. This census data provides information on the composition of the population, age distribution, and the total numbers. This dataset will be enhanced with the 2019 median household income per zip code. The income can also serve as factor in the recommendation on where to open a restaurant, how it should be set up, and what the target audience could be. As a third part geospatial data is added for every zip code, to be able to use Foursquare to explore existing food offerings in the communities of Los Angeles County, CA.</p>
+
+<p><img src="assets/img/2021-06-24-report-capstone-project.ipynb/media/image1.png" alt="Table Description automatically generated with medium confidence" /></p>
+
+<p>Figure 1 - subset of the prepared dataset</p>
+
+<p>Using Foursquare, already existing food venues can be explored, and grouped. This way the competitors can be explored, for example by the food type or rating. It is also possible to identify market niches and give a recommendation for a type of restaurant that could be opened.</p>
+
+<p><img src="assets/img/2021-06-24-report-capstone-project.ipynb/media/image2.png" alt="Table Description automatically generated" /></p>
+
+<p>Figure 2 - Foursquare Data for Zip Code 90001</p>
+
+<p>The following example illustrates how the data from Foursquare helps to analyze the food venues in a community. Using this API, one can determine that Mexican restaurants are the dominant food venue category in Florence-Graham, South Los Angeles.</p>
+
+<p><img src="assets/img/2021-06-24-report-capstone-project.ipynb/media/image3.png" alt="Table Description automatically generated" /></p>
+
+<p>Figure 3 - Food Venues grouped by Category in Florence-Graham</p>
+
+<p>In detail, we will try to answer the following questions:</p>
+
+<ul>
+  <li>
+    <p>What are the most recommended types of restaurants in the county?</p>
+  </li>
+  <li>
+    <p>What is the distribution of the existing food venues categories in the area where we want to open a restaurant in?</p>
+  </li>
+</ul>
+
+<p>The datasets are publicly available at:</p>
+
+<ul>
+  <li>
+    <p>2010 Los Angeles Census Data</p>
+
+    <ul>
+      <li>https://www.kaggle.com/cityofLA/los-angeles-census-data</li>
+    </ul>
+  </li>
+  <li>
+    <p>Median Household Income by Zip Code in 2019</p>
+
+    <ul>
+      <li>http://www.laalmanac.com/employment/em12c.php</li>
+    </ul>
+  </li>
+  <li>
+    <p>US Zip Code Latitude and Longitude</p>
+
+    <ul>
+      <li>https://public.opendatasoft.com/explore/dataset/us-zip-code-latitude-and-longitude/information/</li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="methodology">Methodology</h1>
+
+<p>In this project we will focus on finding a suitable area for a new<br />
+restaurant in Los Angeles County, CA. The areas are defined by their US postal code. In addition, we will look at the most recommended food venue categories throughout the country, to suggest which type of restaurant could be opened. There won’t be a specific location in the chosen area recommended.</p>
+
+<p>In the first step we have merged three different datasets, that provide data<br />
+on the different areas in Los Angeles County. With this data it is possible<br />
+to group or cluster the areas using information like median income, number of<br />
+households and number of inhabitants.</p>
+
+<p>The second step in the analysis is to cluster (using k-means clustering) the<br />
+areas in the county and to describe the individual clusters. Using this<br />
+method we support the process of finding a single area that looks promising<br />
+for a new restaurant.</p>
+
+<p>The third step is to pick a cluster that fits the chosen criteria most. The<br />
+area shall be chosen under the premise of finding a good balance between estimated median income and number of potential customers, where population is rated slightly more important than income. So, the target is to find an area that has as many citizens as possible with the highest income possible. After an area was chosen, the distribution of local restaurant types in this area will be analysed.<br />
+Combining this information with the categories of food venues that are<br />
+popular throughout the whole county, a recommendation of the restaurant to open<br />
+can be given.</p>
+
+<h2 id="31-initial-analysis">3.1 Initial Analysis</h2>
+
+<p>First, let us see what we can find out by analyzing the dataset. As population per Area and income are most important. I have sorted the dataset by these features, to make out some potential candidates for opening a food venue, according to our criteria.</p>
+
+<p><img src="https://Elydora.github.io/DataScienceBlog/assets/img/2021-06-24-report-capstone-project.ipynb/media/image4.png" alt="" /></p>
+
+<p>Figure 4- Income and Population per Area</p>
+
+<p>In Figure 4 we find a combined representation of the top 15 areas by their population (bubble size and color), combined with their estimated median income (x axis). In this graph there are four areas that stand out:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>City</strong></th>
+      <th><strong>Population</strong></th>
+      <th><strong>Median Income</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Norwalk</td>
+      <td>105,600</td>
+      <td>70,700</td>
+    </tr>
+    <tr>
+      <td>Lake View Terrace, Sylmar</td>
+      <td>91,700</td>
+      <td>74,000</td>
+    </tr>
+    <tr>
+      <td>La Puente, Valinda</td>
+      <td>85,000</td>
+      <td>71,200</td>
+    </tr>
+    <tr>
+      <td>Hansen Hills, Pacoima</td>
+      <td>104,000</td>
+      <td>64,000</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Table - Areas with a good combination of income and population</p>
+
+<p>These four cities / neighbourhoods seem to be suitable areas, based on their combination of population and median income. We are going to see if this assumption is confirmed going forward.</p>
+
+<p>In preparation for further analysis, the most recommended food venue categories in Los Angeles County were identified, using the Foursquare API. This was done by going through all available postal codes and querying up to 50 of the most recommended food venues in every area (sorted by their popularity) in a 1 km radius. The food venues were then grouped by their category, to see which are most often recommended.</p>
+
+<p><img src="https://Elydora.github.io/DataScienceBlog/assets/img/2021-06-24-report-capstone-project.ipynb/media/image5.png" alt="" /></p>
+
+<p>Figure - Distribution of recommended Food Venue Categories</p>
+
+<p>Mexican restaurants are by far the most often recommended type of food venue in Los Angeles County, CA. They are followed in some distance by pizza places, fast food and Chinese restaurants and bakeries.</p>
+
+<p>The exact numbers of the top 10 categories are:</p>
+
+<p><img src="https://Elydora.github.io/DataScienceBlog/assets/img/2021-06-24-report-capstone-project.ipynb/media/image6.png" alt="" /></p>
+
+<p>Figure - Top 10 Food Venue Categories</p>
+
+<h2 id="clustering-the-dataset">Clustering the Dataset</h2>
+
+<p>In the second step I chose to cluster the areas, based on the available census and income data. This was done to group similar areas and to identify the cluster that fits the criteria for this project most. The areas from this cluster are then all possible fits for opening a new restaurant and can be compared against each other. This is a useful method to make it easier to select areas, because there are 227 areas in our dataset. I chose k-Means as clustering method.</p>
+
+<p>For identifying the optimal k value, I used the elbow method. So, the clustering algorithm was run multiple times with different k values (1 to 14) and extracted the sum of squared distances of samples to their closes cluster center. Based on the results I chose a k value of 6 going forward.</p>
+
+<p><img src="https://Elydora.github.io/DataScienceBlog/assets/img/2021-06-24-report-capstone-project.ipynb/media/image7.png" alt="" /></p>
+
+<p>Figure - Results of the Elbow Method to choose a k value</p>
+
+<p>I provided five numeric features of the dataset for the clustering algorithm,</p>
+
+<ul>
+  <li>
+    <p>Estimated Median Income,</p>
+  </li>
+  <li>
+    <p>Total Population,</p>
+  </li>
+  <li>
+    <p>Median Age,</p>
+  </li>
+  <li>
+    <p>Total Households and</p>
+  </li>
+  <li>
+    <p>Average Household Size.</p>
+  </li>
+</ul>
+
+<p>After the clustering was done, I calculated a value called “decision factor” for every cluster. This was done to make it easier to compare the clusters and to reproduce the criteria of our stakeholders. This factor is calculated the following way:</p>
+
+<p>[Decision\ Factor\  = \ \frac{\left( Total\ Population<em>1.2 \right)</em>Estimated\ Median\ Income}{100000}]</p>
+
+<p>By adding the result of this calculation to every cluster, it is easy to compare them and find the one that fits best to our criteria.</p>
+
+<p>Now let us have a look at the six clusters that were formed by the algorithm:</p>
+
+<p><img src="https://Elydora.github.io/DataScienceBlog/assets/img/2021-06-24-report-capstone-project.ipynb/media/image8.png" alt="" /></p>
+
+<p>Figure - Clusters that were formed from the Dataset</p>
+
+<h2 id="33-selecting-a-cluster-and-three-of-the-best-fitting-areas">3.3 Selecting a Cluster and three of the best fitting areas</h2>
+
+<p>By comparing the mean values of the numeric data that was used for clustering, I found that income, population and age were the main influences for the cluster that is assigned. I have applied the following labels to every cluster:</p>
+
+<p><img src="https://Elydora.github.io/DataScienceBlog/assets/img/2021-06-24-report-capstone-project.ipynb/media/image9.png" alt="" /></p>
+
+<p>Figure - Labels for the Clusters</p>
+
+<p>So based on this information I am going to choose Cluster 3 for further<br />
+evaluation and as the cluster where I will pick an area from. This cluster<br />
+has a medium income combined with a very high population. It also contains<br />
+the youngest median age, which also can be considered for choosing the<br />
+food venue category. So, it should contain the areas that fit best for further analysis.</p>
+
+<p>Cluster 3 contains 22 areas in Los Angeles County, CA. First, let us see where exactly they are in the County.</p>
+
+<p><img src="https://Elydora.github.io/DataScienceBlog/assets/img/2021-06-24-report-capstone-project.ipynb/media/image10.png" alt="" /></p>
+
+<p>Figure - Geographical Locations of the Areas of Cluster 3</p>
+
+<p>Most of the locations are in very densely populated areas, most of them in the vicinity of the city of Los Angeles. I applied the decision factor again to every of the 22 areas, to identify the best fitting areas and to further investigate them. The following graph shows the areas that have the best distribution of income and population, according to the decision factor used as metric. What the data also showed, that as the average household size increases, the income also decreases.</p>
+
+<p><img src="https://Elydora.github.io/DataScienceBlog/assets/img/2021-06-24-report-capstone-project.ipynb/media/image11.png" alt="" /></p>
+
+<p>Figure - Five best fitting Areas</p>
+
+<p>According to these metrics there are three areas that stand out:</p>
+
+<ul>
+  <li>
+    <p>Norwalk, with a population of 105,600 and an income of $70,600; it has the<br />
+oldest median age of the three communities and the largest population.</p>
+  </li>
+  <li>
+    <p>Lake View Terrace in Sylmar, with a population of 91,700 and an income of<br />
+$74000; it has the highest income of the group and the lowest population.</p>
+  </li>
+  <li>
+    <p>Hansen Hills in Pacoima, with a population 104,700 and an income of $63,800.<br />
+It has the youngest median age of the three and is very close to Norwalk in<br />
+terms of population, but it has the lowest income.</p>
+  </li>
+</ul>
+
+<p>Looking back at the initial analysis we did for all areas in Los Angeles<br />
+County, we find that these three areas were also part auf the group we<br />
+identified, based on their features. Through the clustering we could confirm our<br />
+initial findings.</p>
+
+<h2 id="exploring-the-local-food-venues-and-identifying-market-gaps">Exploring the local Food Venues and identifying Market Gaps</h2>
+
+<p>Using the Foursquare I explored the local food venues in every of the three food venues. I analyzed all venues of a location in a 4 km radius that belong to the postal code of the area. Overall, I found 167 food venues across all 3 areas. The next step was to group the food venues by their categories and cities. Let us look at the visualization of the results:</p>
+
+<p><img src="https://Elydora.github.io/DataScienceBlog/assets/img/2021-06-24-report-capstone-project.ipynb/media/image12.png" alt="" /></p>
+
+<p>Figure - Distribution of Food Venues in the 3 chosen Areas</p>
+
+<p>Having a look at the distribution of food venues across the three areas, we can make the following observations:</p>
+
+<ul>
+  <li>
+    <p>Mexican restaurants are the most common food venue overall.</p>
+  </li>
+  <li>
+    <p>Fast Food restaurants are the second most common venue, but Norwalk has by far the most.</p>
+  </li>
+  <li>
+    <p>Pacoima has the least restaurants overall and Norwalk the most, despite both are very close in population.</p>
+  </li>
+  <li>
+    <p>There seems to be space for a Chinese or American Restaurant or a Donut Shop in Pacoima.</p>
+  </li>
+  <li>
+    <p>Sandwich and pizza places are not common in Pacoima.</p>
+  </li>
+  <li>
+    <p>There is a maximum of one bakery per area, although it is an often-recommended venue type in the county.</p>
+  </li>
+  <li>
+    <p>Opening another fast-food restaurant or Mexican restaurant does not seem like a good idea.</p>
+  </li>
+  <li>
+    <p>There are also multiple options for sushi restaurants, burger joints,<br />
+Japanese or Thai restaurants in all three areas.</p>
+  </li>
+</ul>
+
+<h1 id="results-and-discussion">Results and Discussion</h1>
+
+<p>Our analysis shows that there is a high variability in population, income<br />
+and median age in the different areas of Los Angeles County, CA. So it was<br />
+possible to identify multiple areas that fit the criteria of a relatively high<br />
+median income and a high population. Using census and income data of all<br />
+areas in Los Angeles County, we did a clustering to identify similar areas.<br />
+By analysing the formed clusters there have been three areas identified<br />
+that fit the criteria best. Norwalk, Lake View Terrace in Sylmar and Hansen<br />
+Hills in Pacoima.</p>
+
+<p>They are slightly different in income, population and age and also very<br />
+different in their local distribution of available food venues. The final<br />
+area could be picked on which of these factors matters to the stakeholders<br />
+most. I will pick Norwalk as the final area for a food venue, because it<br />
+offers the best combination of a high population and a good income out<br />
+of these three areas.</p>
+
+<p>By analysing the most recommended food venue categories across the whole<br />
+county, we found that mexican restaurants are by far the most often<br />
+recommended venue. After them pizza places, fast food restaurants,<br />
+chinese restaurants and bakeries follow in that order. To give a<br />
+recommendation for a food venue to open in Norwalk, we can compare the local<br />
+distribution of food venues what was recommended the most in the county. By<br />
+looking at Norwalk we found that there are already many mexican<br />
+restaurants (12) and fast food restaurants (15). Pizza places (7) and<br />
+chinese restaurants (5) area also recommended in a higher number, so<br />
+opening a restaurant in one of those categories would be better, but there<br />
+is still some competition. What stands out is that there is currently<br />
+only one bakery recommended by Foursquare in Norwalk. Looking at the<br />
+distribution of recommendations in the county, bakeries are the fifth<br />
+most recommended venue category. Because of this, I would recommend<br />
+opening a bakery in Norwalk, CA to the stakeholders.</p>
+
+<p>Purpose of this analysis was to identify a possible area and food venue type<br />
+for a new restaurant in Los Angeles County, CA based on a very limited<br />
+amount of factors. Analysing census data and existing food venues is only<br />
+one part on the way to find a location for opening a new restaurant. Other<br />
+factors that also play a role are for example available spaces, rent<br />
+costs, other venues in the area. This analysis serves as a starting point<br />
+for finding possible locations, but further analysis needs to be done by<br />
+the stakeholders.</p>
+
+<h1 id="conclusion">Conclusion</h1>
+
+<p>The purpose of this project was to find a possible location for a new<br />
+restaurant in Los Angeles County, CA. The desire from the stakeholders was<br />
+to identify locations that offer a good balance between median income and<br />
+number of inhabitants, although income shall be rated slightly more important<br />
+than population. In addition, the idea was to identify possible food<br />
+venue categories by comparing recommended venues across the country with the<br />
+local venues in the different areas. So for this there were census and<br />
+income data combined to identify areas that fit the criteria. A clustering<br />
+was performed, to group the communities in Los Angeles County using their<br />
+income and population. Then the cluster was chosen that fit the former<br />
+mentioned criteria the most. From this cluster the top 3 areas were chosen,<br />
+that had the best balance between income and population. This way the best<br />
+three candidates for a new restaurant location were identified.</p>
+
+<p>The next step was to analyze the local food venue categories. For this the<br />
+local venues in a 4 km radius were identified and grouped. This grouping was<br />
+then compared with the distribution of the most recommended food venue<br />
+categories across the whole county. In doing so, opportunities for new<br />
+restaurants in any of the three chosen communities have been identified.</p>
+
+<p>The final decision can be made by the stakeholders, based on the<br />
+recommendations given in this project. This decision for a locality can be<br />
+based on income, population or median age of the areas. The decision for a<br />
+venue category can be based on popular venues across the county, and the gaps<br />
+in the local food offerings that have been identified.</p>
+
+  </div><a class="u-url" href="/DataScienceBlog/2021/06/24/report-capstone-project.ipynb.html" hidden></a>
+</article>
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/DataScienceBlog/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/DataScienceBlog/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/DataScienceBlog/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>various data science posts</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/Elydora" title="Elydora"><svg class="svg-icon grey"><use xlink:href="/DataScienceBlog/assets/minima-social-icons.svg#github"></use></svg></a></li><li><a rel="me" href="https://twitter.com/fastdotai" title="fastdotai"><svg class="svg-icon grey"><use xlink:href="/DataScienceBlog/assets/minima-social-icons.svg#twitter"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

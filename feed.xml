@@ -1,4 +1,388 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="https://elydora.github.io/DataScienceBlog/feed.xml" rel="self" type="application/atom+xml" /><link href="https://elydora.github.io/DataScienceBlog/" rel="alternate" type="text/html" /><updated>2021-09-02T14:39:47-05:00</updated><id>https://elydora.github.io/DataScienceBlog/feed.xml</id><title type="html">Yet Another Data Science Blog</title><subtitle>various data science posts</subtitle><entry><title type="html">Where to open a Restaurant in LA County, CA?</title><link href="https://elydora.github.io/DataScienceBlog/ibm/data_science/ml/visualization/2021/06/24/capstone-project.html" rel="alternate" type="text/html" title="Where to open a Restaurant in LA County, CA?" /><published>2021-06-24T00:00:00-05:00</published><updated>2021-06-24T00:00:00-05:00</updated><id>https://elydora.github.io/DataScienceBlog/ibm/data_science/ml/visualization/2021/06/24/capstone-project</id><content type="html" xml:base="https://elydora.github.io/DataScienceBlog/ibm/data_science/ml/visualization/2021/06/24/capstone-project.html">&lt;!--
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="https://elydora.github.io/DataScienceBlog/feed.xml" rel="self" type="application/atom+xml" /><link href="https://elydora.github.io/DataScienceBlog/" rel="alternate" type="text/html" /><updated>2021-09-02T14:46:42-05:00</updated><id>https://elydora.github.io/DataScienceBlog/feed.xml</id><title type="html">Yet Another Data Science Blog</title><subtitle>various data science posts</subtitle><entry><title type="html">Report Capstone Project.ipynb</title><link href="https://elydora.github.io/DataScienceBlog/2021/06/24/report-capstone-project.ipynb.html" rel="alternate" type="text/html" title="Report Capstone Project.ipynb" /><published>2021-06-24T00:00:00-05:00</published><updated>2021-06-24T00:00:00-05:00</updated><id>https://elydora.github.io/DataScienceBlog/2021/06/24/report-capstone-project.ipynb</id><content type="html" xml:base="https://elydora.github.io/DataScienceBlog/2021/06/24/report-capstone-project.ipynb.html">&lt;p&gt;&lt;a href=&quot;#introduction&quot;&gt;1 Introduction - 2 -&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;#data&quot;&gt;2 Data - 3 -&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;#methodology&quot;&gt;3 Methodology - 4 -&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;#initial-analysis&quot;&gt;3.1 Initial Analysis - 5 -&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;#clustering-the-dataset&quot;&gt;3.2 Clustering the Dataset - 7 -&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;#selecting-a-cluster-and-three-of-the-best-fitting-areas&quot;&gt;3.3 Selecting a Cluster and three of the best fitting areas - 8 -&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;#exploring-the-local-food-venues-and-identifying-market-gaps&quot;&gt;3.4 Exploring the local Food Venues and identifying Market Gaps - 10 -&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;#results-and-discussion&quot;&gt;4 Results and Discussion - 11 -&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;#conclusion&quot;&gt;5 Conclusion - 12 -&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1&gt;**&lt;/h1&gt;
+&lt;p&gt;**&lt;/p&gt;
+
+&lt;h1 id=&quot;introduction&quot;&gt;Introduction&lt;/h1&gt;
+
+&lt;p&gt;In this capstone project I will try to give a recommendation on where to open a&lt;br /&gt;
+restaurant in Los Angeles County, CA. The location will be a community or area in the county, that is defined by its postal code. In addition, there shall be given a&lt;br /&gt;
+recommendation of which type of food venue could be opened, based on&lt;br /&gt;
+existing restaurants in the area and generally popular restaurants in the&lt;br /&gt;
+whole county.&lt;/p&gt;
+
+&lt;p&gt;The decision on where to open a restaurant can be based on many factors,&lt;br /&gt;
+depending on the target group. For example, one could look for very dense&lt;br /&gt;
+populated areas, or areas with lots of wealthy citizens. Even the median age&lt;br /&gt;
+of the population can play a role. Because of this, I will include census and economic data into the analysis.&lt;/p&gt;
+
+&lt;p&gt;I will make a final recommendation based on the following conditions, that:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Find the area with a good balance between number of possible customers&lt;br /&gt;
+and a high median income (population is slightly more important than income).&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The type of restaurant will be determined by the most recommended categories&lt;br /&gt;
+of food venue in Los Angeles County, CA and the number of already existing&lt;br /&gt;
+venues in the area, grouped by their categories.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;data&quot;&gt;Data&lt;/h1&gt;
+
+&lt;p&gt;The basis for the analysis will be the 2010 census data of all zip codes in Los Angeles County, CA. This census data provides information on the composition of the population, age distribution, and the total numbers. This dataset will be enhanced with the 2019 median household income per zip code. The income can also serve as factor in the recommendation on where to open a restaurant, how it should be set up, and what the target audience could be. As a third part geospatial data is added for every zip code, to be able to use Foursquare to explore existing food offerings in the communities of Los Angeles County, CA.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;assets/img/2021-06-24-report-capstone-project.ipynb/media/image1.png&quot; alt=&quot;Table Description automatically generated with medium confidence&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Figure 1 - subset of the prepared dataset&lt;/p&gt;
+
+&lt;p&gt;Using Foursquare, already existing food venues can be explored, and grouped. This way the competitors can be explored, for example by the food type or rating. It is also possible to identify market niches and give a recommendation for a type of restaurant that could be opened.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;assets/img/2021-06-24-report-capstone-project.ipynb/media/image2.png&quot; alt=&quot;Table Description automatically generated&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Figure 2 - Foursquare Data for Zip Code 90001&lt;/p&gt;
+
+&lt;p&gt;The following example illustrates how the data from Foursquare helps to analyze the food venues in a community. Using this API, one can determine that Mexican restaurants are the dominant food venue category in Florence-Graham, South Los Angeles.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;assets/img/2021-06-24-report-capstone-project.ipynb/media/image3.png&quot; alt=&quot;Table Description automatically generated&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Figure 3 - Food Venues grouped by Category in Florence-Graham&lt;/p&gt;
+
+&lt;p&gt;In detail, we will try to answer the following questions:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;What are the most recommended types of restaurants in the county?&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;What is the distribution of the existing food venues categories in the area where we want to open a restaurant in?&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The datasets are publicly available at:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;2010 Los Angeles Census Data&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;https://www.kaggle.com/cityofLA/los-angeles-census-data&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Median Household Income by Zip Code in 2019&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;http://www.laalmanac.com/employment/em12c.php&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;US Zip Code Latitude and Longitude&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;https://public.opendatasoft.com/explore/dataset/us-zip-code-latitude-and-longitude/information/&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;methodology&quot;&gt;Methodology&lt;/h1&gt;
+
+&lt;p&gt;In this project we will focus on finding a suitable area for a new&lt;br /&gt;
+restaurant in Los Angeles County, CA. The areas are defined by their US postal code. In addition, we will look at the most recommended food venue categories throughout the country, to suggest which type of restaurant could be opened. There won’t be a specific location in the chosen area recommended.&lt;/p&gt;
+
+&lt;p&gt;In the first step we have merged three different datasets, that provide data&lt;br /&gt;
+on the different areas in Los Angeles County. With this data it is possible&lt;br /&gt;
+to group or cluster the areas using information like median income, number of&lt;br /&gt;
+households and number of inhabitants.&lt;/p&gt;
+
+&lt;p&gt;The second step in the analysis is to cluster (using k-means clustering) the&lt;br /&gt;
+areas in the county and to describe the individual clusters. Using this&lt;br /&gt;
+method we support the process of finding a single area that looks promising&lt;br /&gt;
+for a new restaurant.&lt;/p&gt;
+
+&lt;p&gt;The third step is to pick a cluster that fits the chosen criteria most. The&lt;br /&gt;
+area shall be chosen under the premise of finding a good balance between estimated median income and number of potential customers, where population is rated slightly more important than income. So, the target is to find an area that has as many citizens as possible with the highest income possible. After an area was chosen, the distribution of local restaurant types in this area will be analysed.&lt;br /&gt;
+Combining this information with the categories of food venues that are&lt;br /&gt;
+popular throughout the whole county, a recommendation of the restaurant to open&lt;br /&gt;
+can be given.&lt;/p&gt;
+
+&lt;h2 id=&quot;31-initial-analysis&quot;&gt;3.1 Initial Analysis&lt;/h2&gt;
+
+&lt;p&gt;First, let us see what we can find out by analyzing the dataset. As population per Area and income are most important. I have sorted the dataset by these features, to make out some potential candidates for opening a food venue, according to our criteria.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://Elydora.github.io/DataScienceBlog/assets/img/2021-06-24-report-capstone-project.ipynb/media/image4.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Figure 4- Income and Population per Area&lt;/p&gt;
+
+&lt;p&gt;In Figure 4 we find a combined representation of the top 15 areas by their population (bubble size and color), combined with their estimated median income (x axis). In this graph there are four areas that stand out:&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;&lt;strong&gt;City&lt;/strong&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;strong&gt;Population&lt;/strong&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;strong&gt;Median Income&lt;/strong&gt;&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Norwalk&lt;/td&gt;
+      &lt;td&gt;105,600&lt;/td&gt;
+      &lt;td&gt;70,700&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Lake View Terrace, Sylmar&lt;/td&gt;
+      &lt;td&gt;91,700&lt;/td&gt;
+      &lt;td&gt;74,000&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;La Puente, Valinda&lt;/td&gt;
+      &lt;td&gt;85,000&lt;/td&gt;
+      &lt;td&gt;71,200&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Hansen Hills, Pacoima&lt;/td&gt;
+      &lt;td&gt;104,000&lt;/td&gt;
+      &lt;td&gt;64,000&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Table - Areas with a good combination of income and population&lt;/p&gt;
+
+&lt;p&gt;These four cities / neighbourhoods seem to be suitable areas, based on their combination of population and median income. We are going to see if this assumption is confirmed going forward.&lt;/p&gt;
+
+&lt;p&gt;In preparation for further analysis, the most recommended food venue categories in Los Angeles County were identified, using the Foursquare API. This was done by going through all available postal codes and querying up to 50 of the most recommended food venues in every area (sorted by their popularity) in a 1 km radius. The food venues were then grouped by their category, to see which are most often recommended.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://Elydora.github.io/DataScienceBlog/assets/img/2021-06-24-report-capstone-project.ipynb/media/image5.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Figure - Distribution of recommended Food Venue Categories&lt;/p&gt;
+
+&lt;p&gt;Mexican restaurants are by far the most often recommended type of food venue in Los Angeles County, CA. They are followed in some distance by pizza places, fast food and Chinese restaurants and bakeries.&lt;/p&gt;
+
+&lt;p&gt;The exact numbers of the top 10 categories are:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://Elydora.github.io/DataScienceBlog/assets/img/2021-06-24-report-capstone-project.ipynb/media/image6.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Figure - Top 10 Food Venue Categories&lt;/p&gt;
+
+&lt;h2 id=&quot;clustering-the-dataset&quot;&gt;Clustering the Dataset&lt;/h2&gt;
+
+&lt;p&gt;In the second step I chose to cluster the areas, based on the available census and income data. This was done to group similar areas and to identify the cluster that fits the criteria for this project most. The areas from this cluster are then all possible fits for opening a new restaurant and can be compared against each other. This is a useful method to make it easier to select areas, because there are 227 areas in our dataset. I chose k-Means as clustering method.&lt;/p&gt;
+
+&lt;p&gt;For identifying the optimal k value, I used the elbow method. So, the clustering algorithm was run multiple times with different k values (1 to 14) and extracted the sum of squared distances of samples to their closes cluster center. Based on the results I chose a k value of 6 going forward.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://Elydora.github.io/DataScienceBlog/assets/img/2021-06-24-report-capstone-project.ipynb/media/image7.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Figure - Results of the Elbow Method to choose a k value&lt;/p&gt;
+
+&lt;p&gt;I provided five numeric features of the dataset for the clustering algorithm,&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Estimated Median Income,&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Total Population,&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Median Age,&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Total Households and&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Average Household Size.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;After the clustering was done, I calculated a value called “decision factor” for every cluster. This was done to make it easier to compare the clusters and to reproduce the criteria of our stakeholders. This factor is calculated the following way:&lt;/p&gt;
+
+&lt;p&gt;[Decision\ Factor\  = \ \frac{\left( Total\ Population&lt;em&gt;1.2 \right)&lt;/em&gt;Estimated\ Median\ Income}{100000}]&lt;/p&gt;
+
+&lt;p&gt;By adding the result of this calculation to every cluster, it is easy to compare them and find the one that fits best to our criteria.&lt;/p&gt;
+
+&lt;p&gt;Now let us have a look at the six clusters that were formed by the algorithm:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://Elydora.github.io/DataScienceBlog/assets/img/2021-06-24-report-capstone-project.ipynb/media/image8.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Figure - Clusters that were formed from the Dataset&lt;/p&gt;
+
+&lt;h2 id=&quot;33-selecting-a-cluster-and-three-of-the-best-fitting-areas&quot;&gt;3.3 Selecting a Cluster and three of the best fitting areas&lt;/h2&gt;
+
+&lt;p&gt;By comparing the mean values of the numeric data that was used for clustering, I found that income, population and age were the main influences for the cluster that is assigned. I have applied the following labels to every cluster:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://Elydora.github.io/DataScienceBlog/assets/img/2021-06-24-report-capstone-project.ipynb/media/image9.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Figure - Labels for the Clusters&lt;/p&gt;
+
+&lt;p&gt;So based on this information I am going to choose Cluster 3 for further&lt;br /&gt;
+evaluation and as the cluster where I will pick an area from. This cluster&lt;br /&gt;
+has a medium income combined with a very high population. It also contains&lt;br /&gt;
+the youngest median age, which also can be considered for choosing the&lt;br /&gt;
+food venue category. So, it should contain the areas that fit best for further analysis.&lt;/p&gt;
+
+&lt;p&gt;Cluster 3 contains 22 areas in Los Angeles County, CA. First, let us see where exactly they are in the County.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://Elydora.github.io/DataScienceBlog/assets/img/2021-06-24-report-capstone-project.ipynb/media/image10.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Figure - Geographical Locations of the Areas of Cluster 3&lt;/p&gt;
+
+&lt;p&gt;Most of the locations are in very densely populated areas, most of them in the vicinity of the city of Los Angeles. I applied the decision factor again to every of the 22 areas, to identify the best fitting areas and to further investigate them. The following graph shows the areas that have the best distribution of income and population, according to the decision factor used as metric. What the data also showed, that as the average household size increases, the income also decreases.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://Elydora.github.io/DataScienceBlog/assets/img/2021-06-24-report-capstone-project.ipynb/media/image11.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Figure - Five best fitting Areas&lt;/p&gt;
+
+&lt;p&gt;According to these metrics there are three areas that stand out:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Norwalk, with a population of 105,600 and an income of $70,600; it has the&lt;br /&gt;
+oldest median age of the three communities and the largest population.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Lake View Terrace in Sylmar, with a population of 91,700 and an income of&lt;br /&gt;
+$74000; it has the highest income of the group and the lowest population.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Hansen Hills in Pacoima, with a population 104,700 and an income of $63,800.&lt;br /&gt;
+It has the youngest median age of the three and is very close to Norwalk in&lt;br /&gt;
+terms of population, but it has the lowest income.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Looking back at the initial analysis we did for all areas in Los Angeles&lt;br /&gt;
+County, we find that these three areas were also part auf the group we&lt;br /&gt;
+identified, based on their features. Through the clustering we could confirm our&lt;br /&gt;
+initial findings.&lt;/p&gt;
+
+&lt;h2 id=&quot;exploring-the-local-food-venues-and-identifying-market-gaps&quot;&gt;Exploring the local Food Venues and identifying Market Gaps&lt;/h2&gt;
+
+&lt;p&gt;Using the Foursquare I explored the local food venues in every of the three food venues. I analyzed all venues of a location in a 4 km radius that belong to the postal code of the area. Overall, I found 167 food venues across all 3 areas. The next step was to group the food venues by their categories and cities. Let us look at the visualization of the results:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://Elydora.github.io/DataScienceBlog/assets/img/2021-06-24-report-capstone-project.ipynb/media/image12.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Figure - Distribution of Food Venues in the 3 chosen Areas&lt;/p&gt;
+
+&lt;p&gt;Having a look at the distribution of food venues across the three areas, we can make the following observations:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Mexican restaurants are the most common food venue overall.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Fast Food restaurants are the second most common venue, but Norwalk has by far the most.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Pacoima has the least restaurants overall and Norwalk the most, despite both are very close in population.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;There seems to be space for a Chinese or American Restaurant or a Donut Shop in Pacoima.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Sandwich and pizza places are not common in Pacoima.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;There is a maximum of one bakery per area, although it is an often-recommended venue type in the county.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Opening another fast-food restaurant or Mexican restaurant does not seem like a good idea.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;There are also multiple options for sushi restaurants, burger joints,&lt;br /&gt;
+Japanese or Thai restaurants in all three areas.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;results-and-discussion&quot;&gt;Results and Discussion&lt;/h1&gt;
+
+&lt;p&gt;Our analysis shows that there is a high variability in population, income&lt;br /&gt;
+and median age in the different areas of Los Angeles County, CA. So it was&lt;br /&gt;
+possible to identify multiple areas that fit the criteria of a relatively high&lt;br /&gt;
+median income and a high population. Using census and income data of all&lt;br /&gt;
+areas in Los Angeles County, we did a clustering to identify similar areas.&lt;br /&gt;
+By analysing the formed clusters there have been three areas identified&lt;br /&gt;
+that fit the criteria best. Norwalk, Lake View Terrace in Sylmar and Hansen&lt;br /&gt;
+Hills in Pacoima.&lt;/p&gt;
+
+&lt;p&gt;They are slightly different in income, population and age and also very&lt;br /&gt;
+different in their local distribution of available food venues. The final&lt;br /&gt;
+area could be picked on which of these factors matters to the stakeholders&lt;br /&gt;
+most. I will pick Norwalk as the final area for a food venue, because it&lt;br /&gt;
+offers the best combination of a high population and a good income out&lt;br /&gt;
+of these three areas.&lt;/p&gt;
+
+&lt;p&gt;By analysing the most recommended food venue categories across the whole&lt;br /&gt;
+county, we found that mexican restaurants are by far the most often&lt;br /&gt;
+recommended venue. After them pizza places, fast food restaurants,&lt;br /&gt;
+chinese restaurants and bakeries follow in that order. To give a&lt;br /&gt;
+recommendation for a food venue to open in Norwalk, we can compare the local&lt;br /&gt;
+distribution of food venues what was recommended the most in the county. By&lt;br /&gt;
+looking at Norwalk we found that there are already many mexican&lt;br /&gt;
+restaurants (12) and fast food restaurants (15). Pizza places (7) and&lt;br /&gt;
+chinese restaurants (5) area also recommended in a higher number, so&lt;br /&gt;
+opening a restaurant in one of those categories would be better, but there&lt;br /&gt;
+is still some competition. What stands out is that there is currently&lt;br /&gt;
+only one bakery recommended by Foursquare in Norwalk. Looking at the&lt;br /&gt;
+distribution of recommendations in the county, bakeries are the fifth&lt;br /&gt;
+most recommended venue category. Because of this, I would recommend&lt;br /&gt;
+opening a bakery in Norwalk, CA to the stakeholders.&lt;/p&gt;
+
+&lt;p&gt;Purpose of this analysis was to identify a possible area and food venue type&lt;br /&gt;
+for a new restaurant in Los Angeles County, CA based on a very limited&lt;br /&gt;
+amount of factors. Analysing census data and existing food venues is only&lt;br /&gt;
+one part on the way to find a location for opening a new restaurant. Other&lt;br /&gt;
+factors that also play a role are for example available spaces, rent&lt;br /&gt;
+costs, other venues in the area. This analysis serves as a starting point&lt;br /&gt;
+for finding possible locations, but further analysis needs to be done by&lt;br /&gt;
+the stakeholders.&lt;/p&gt;
+
+&lt;h1 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h1&gt;
+
+&lt;p&gt;The purpose of this project was to find a possible location for a new&lt;br /&gt;
+restaurant in Los Angeles County, CA. The desire from the stakeholders was&lt;br /&gt;
+to identify locations that offer a good balance between median income and&lt;br /&gt;
+number of inhabitants, although income shall be rated slightly more important&lt;br /&gt;
+than population. In addition, the idea was to identify possible food&lt;br /&gt;
+venue categories by comparing recommended venues across the country with the&lt;br /&gt;
+local venues in the different areas. So for this there were census and&lt;br /&gt;
+income data combined to identify areas that fit the criteria. A clustering&lt;br /&gt;
+was performed, to group the communities in Los Angeles County using their&lt;br /&gt;
+income and population. Then the cluster was chosen that fit the former&lt;br /&gt;
+mentioned criteria the most. From this cluster the top 3 areas were chosen,&lt;br /&gt;
+that had the best balance between income and population. This way the best&lt;br /&gt;
+three candidates for a new restaurant location were identified.&lt;/p&gt;
+
+&lt;p&gt;The next step was to analyze the local food venue categories. For this the&lt;br /&gt;
+local venues in a 4 km radius were identified and grouped. This grouping was&lt;br /&gt;
+then compared with the distribution of the most recommended food venue&lt;br /&gt;
+categories across the whole county. In doing so, opportunities for new&lt;br /&gt;
+restaurants in any of the three chosen communities have been identified.&lt;/p&gt;
+
+&lt;p&gt;The final decision can be made by the stakeholders, based on the&lt;br /&gt;
+recommendations given in this project. This decision for a locality can be&lt;br /&gt;
+based on income, population or median age of the areas. The decision for a&lt;br /&gt;
+venue category can be based on popular venues across the county, and the gaps&lt;br /&gt;
+in the local food offerings that have been identified.&lt;/p&gt;</content><author><name></name></author><summary type="html">1 Introduction - 2 -</summary></entry><entry><title type="html">Where to open a Restaurant in LA County, CA?</title><link href="https://elydora.github.io/DataScienceBlog/ibm/data_science/ml/visualization/2021/06/24/capstone-project.html" rel="alternate" type="text/html" title="Where to open a Restaurant in LA County, CA?" /><published>2021-06-24T00:00:00-05:00</published><updated>2021-06-24T00:00:00-05:00</updated><id>https://elydora.github.io/DataScienceBlog/ibm/data_science/ml/visualization/2021/06/24/capstone-project</id><content type="html" xml:base="https://elydora.github.io/DataScienceBlog/ibm/data_science/ml/visualization/2021/06/24/capstone-project.html">&lt;!--
 #################################################
 ### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
 #################################################
@@ -9468,258 +9852,7 @@ Bipeds
 &lt;/div&gt;
     
 
-&lt;/div&gt;</content><author><name>Felix</name></author><category term="classes" /><category term="jupyter" /><category term="percipio" /><summary type="html"></summary></entry><entry><title type="html">Fundamental Data Structures</title><link href="https://elydora.github.io/DataScienceBlog/datastructures/jupyter/percipio/2020/06/22/Fundamental-Data-Structures.html" rel="alternate" type="text/html" title="Fundamental Data Structures" /><published>2020-06-22T00:00:00-05:00</published><updated>2020-06-22T00:00:00-05:00</updated><id>https://elydora.github.io/DataScienceBlog/datastructures/jupyter/percipio/2020/06/22/Fundamental-Data-Structures</id><content type="html" xml:base="https://elydora.github.io/DataScienceBlog/datastructures/jupyter/percipio/2020/06/22/Fundamental-Data-Structures.html">&lt;!--
-#################################################
-### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
-#################################################
-# file to edit: _notebooks/2020-06-22-Fundamental-Data-Structures.ipynb
---&gt;
-
-&lt;div class=&quot;container&quot; id=&quot;notebook-container&quot;&gt;
-        
-    
-    
-&lt;div class=&quot;cell border-box-sizing code_cell rendered&quot;&gt;
-&lt;div class=&quot;input&quot;&gt;
-
-&lt;div class=&quot;inner_cell&quot;&gt;
-    &lt;div class=&quot;input_area&quot;&gt;
-&lt;div class=&quot; highlight hl-ipython2&quot;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;# make difficult operations possible&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# occupy less space and still represent the complexity of information and&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# its interrelationships in an intuitive way&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# data structures and algorithms go hand-in-hand&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# A set is extremely fast for membership and containment queries&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# stacks can be used for undo functionality in applications as well as back functionality&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# index data structures&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# hash tables&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# graphs for relationships&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# data structures are concrete representations of data from the point of view of an implementor&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# they specify the actual implementation of the structure in code to meet the expected behavior&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-    &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;output_wrapper&quot;&gt;
-&lt;div class=&quot;output&quot;&gt;
-
-&lt;div class=&quot;output_area&quot;&gt;
-
-&lt;div class=&quot;output_subarea output_stream output_stdout output_text&quot;&gt;
-&lt;pre&gt;Hallo
-&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-    
-
-    
-    
-&lt;div class=&quot;cell border-box-sizing code_cell rendered&quot;&gt;
-&lt;div class=&quot;input&quot;&gt;
-
-&lt;div class=&quot;inner_cell&quot;&gt;
-    &lt;div class=&quot;input_area&quot;&gt;
-&lt;div class=&quot; highlight hl-ipython2&quot;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;# Time (# of operations / amount of processing)&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# Space (make best use of available space, memory and disk space needed)&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# Network (overall network bandwidth, network speed)&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# efficient = uses fewer resources along all these axes&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# using more of the resources that are plenty, and less of those who lack&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# performance indicates how much of these resources are used by the code&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# == Performance can be measured in terms of complexity&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# Complexity is a measure of how resource requirements change as the size of the problem gets larger&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# The higher the complexity of a overall problem, the lower the performance&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-    &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;output_wrapper&quot;&gt;
-&lt;div class=&quot;output&quot;&gt;
-
-&lt;div class=&quot;output_area&quot;&gt;
-
-
-
-&lt;div class=&quot;output_text output_subarea output_execute_result&quot;&gt;
-&lt;pre&gt;2&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-    
-
-    
-    
-&lt;div class=&quot;cell border-box-sizing code_cell rendered&quot;&gt;
-&lt;div class=&quot;input&quot;&gt;
-
-&lt;div class=&quot;inner_cell&quot;&gt;
-    &lt;div class=&quot;input_area&quot;&gt;
-&lt;div class=&quot; highlight hl-ipython2&quot;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;# Read - Write - Assignment - Test&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# do not worry about the number of operations&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# be worried how that number changes is based on the input size&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# that is how performance changes based on input size&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# focus on the worst case performance&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# what is the maximum number of basic operations that might have to be performed based on the input&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# Complexity varies with the algorithm&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-    &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-    
-
-    
-    
-&lt;div class=&quot;cell border-box-sizing code_cell rendered&quot;&gt;
-&lt;div class=&quot;input&quot;&gt;
-
-&lt;div class=&quot;inner_cell&quot;&gt;
-    &lt;div class=&quot;input_area&quot;&gt;
-&lt;div class=&quot; highlight hl-ipython2&quot;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;# Represents the complexity of an algorithm&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# An algorithm whose complexity does not change with the input size is O(1)&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# -&amp;gt; the algorithm is said to have constant time complexity&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# The algorithm is said to have constant time complexity&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# It takes the same amount of time, even if the input size is doubled, tripled, or increased to any level&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-    &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-    
-
-    
-    
-&lt;div class=&quot;cell border-box-sizing code_cell rendered&quot;&gt;
-&lt;div class=&quot;input&quot;&gt;
-
-&lt;div class=&quot;inner_cell&quot;&gt;
-    &lt;div class=&quot;input_area&quot;&gt;
-&lt;div class=&quot; highlight hl-ipython2&quot;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;# The complexity of an algorithm is O(N^2) if the time taken by the algorithm increases quadratically when N increases&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# Lower order terms and constants do not matter while expressing complexity&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# O(N^2 + 1000) is equivalent to O(N^2) -&amp;gt; N is assumed very large&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# O(N^2+N) is equivalent to O(N^2)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-    &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-    
-
-    
-    
-&lt;div class=&quot;cell border-box-sizing code_cell rendered&quot;&gt;
-&lt;div class=&quot;input&quot;&gt;
-
-&lt;div class=&quot;inner_cell&quot;&gt;
-    &lt;div class=&quot;input_area&quot;&gt;
-&lt;div class=&quot; highlight hl-ipython2&quot;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt; 
-&lt;/pre&gt;&lt;/div&gt;
-
-    &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-    
-
-    
-    
-&lt;div class=&quot;cell border-box-sizing code_cell rendered&quot;&gt;
-&lt;div class=&quot;input&quot;&gt;
-
-&lt;div class=&quot;inner_cell&quot;&gt;
-    &lt;div class=&quot;input_area&quot;&gt;
-&lt;div class=&quot; highlight hl-ipython2&quot;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;# Header points to the first element&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# Best way to count is to increment/decrement a counter at every list operation&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# Adding: At the end/ in between -&amp;gt; O(N); at the beginning -&amp;gt; O(1)&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# Deleting: At the end/ in between -&amp;gt; O(N); at the beginning -&amp;gt; O(1)&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# Counting: Iterating -&amp;gt; O(1), Increment/Decrement a permanent Counter -&amp;gt; O(1)&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# Reversing: O(N)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-    &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-    
-
-    
-    
-&lt;div class=&quot;cell border-box-sizing code_cell rendered&quot;&gt;
-&lt;div class=&quot;input&quot;&gt;
-
-&lt;div class=&quot;inner_cell&quot;&gt;
-    &lt;div class=&quot;input_area&quot;&gt;
-&lt;div class=&quot; highlight hl-ipython2&quot;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;# Common operations (add, remove, peek) have O(1) complexity&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# Can be implemented using a linked list&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# LIFO principle&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# Insertion and deletion at the same end&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-    &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-    
-
-    
-    
-&lt;div class=&quot;cell border-box-sizing code_cell rendered&quot;&gt;
-&lt;div class=&quot;input&quot;&gt;
-
-&lt;div class=&quot;inner_cell&quot;&gt;
-    &lt;div class=&quot;input_area&quot;&gt;
-&lt;div class=&quot; highlight hl-ipython2&quot;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;# Common operations (add, remove, peek) have O(1) complexity&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# Can be implemented using a linked list&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# FIFO principle&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# Insertion and deletion at opposite ends&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-    &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-    
-
-    
-    
-&lt;div class=&quot;cell border-box-sizing code_cell rendered&quot;&gt;
-&lt;div class=&quot;input&quot;&gt;
-
-&lt;div class=&quot;inner_cell&quot;&gt;
-    &lt;div class=&quot;input_area&quot;&gt;
-&lt;div class=&quot; highlight hl-ipython2&quot;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt; 
-&lt;/pre&gt;&lt;/div&gt;
-
-    &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-    
-
-&lt;/div&gt;</content><author><name>Felix</name></author><category term="datastructures" /><category term="jupyter" /><category term="percipio" /><summary type="html"></summary></entry><entry><title type="html">Implementing Data Structures</title><link href="https://elydora.github.io/DataScienceBlog/datastructures/jupyter/percipio/2020/06/22/Implementing-Data-Structures.html" rel="alternate" type="text/html" title="Implementing Data Structures" /><published>2020-06-22T00:00:00-05:00</published><updated>2020-06-22T00:00:00-05:00</updated><id>https://elydora.github.io/DataScienceBlog/datastructures/jupyter/percipio/2020/06/22/Implementing-Data-Structures</id><content type="html" xml:base="https://elydora.github.io/DataScienceBlog/datastructures/jupyter/percipio/2020/06/22/Implementing-Data-Structures.html">&lt;!--
+&lt;/div&gt;</content><author><name>Felix</name></author><category term="classes" /><category term="jupyter" /><category term="percipio" /><summary type="html"></summary></entry><entry><title type="html">Implementing Data Structures</title><link href="https://elydora.github.io/DataScienceBlog/datastructures/jupyter/percipio/2020/06/22/Implementing-Data-Structures.html" rel="alternate" type="text/html" title="Implementing Data Structures" /><published>2020-06-22T00:00:00-05:00</published><updated>2020-06-22T00:00:00-05:00</updated><id>https://elydora.github.io/DataScienceBlog/datastructures/jupyter/percipio/2020/06/22/Implementing-Data-Structures</id><content type="html" xml:base="https://elydora.github.io/DataScienceBlog/datastructures/jupyter/percipio/2020/06/22/Implementing-Data-Structures.html">&lt;!--
 #################################################
 ### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
 #################################################
@@ -10825,11 +10958,11 @@ Total iterations are 16
 &lt;/div&gt;
     
 
-&lt;/div&gt;</content><author><name>Felix</name></author><category term="datastructures" /><category term="jupyter" /><category term="percipio" /><summary type="html"></summary></entry><entry><title type="html">Complex Data Types - Deep and Shallow Copies</title><link href="https://elydora.github.io/DataScienceBlog/datatypes/jupyter/percipio/2020/06/21/comp-dt-DeepAndShallowCopies.html" rel="alternate" type="text/html" title="Complex Data Types - Deep and Shallow Copies" /><published>2020-06-21T00:00:00-05:00</published><updated>2020-06-21T00:00:00-05:00</updated><id>https://elydora.github.io/DataScienceBlog/datatypes/jupyter/percipio/2020/06/21/comp-dt-DeepAndShallowCopies</id><content type="html" xml:base="https://elydora.github.io/DataScienceBlog/datatypes/jupyter/percipio/2020/06/21/comp-dt-DeepAndShallowCopies.html">&lt;!--
+&lt;/div&gt;</content><author><name>Felix</name></author><category term="datastructures" /><category term="jupyter" /><category term="percipio" /><summary type="html"></summary></entry><entry><title type="html">Fundamental Data Structures</title><link href="https://elydora.github.io/DataScienceBlog/datastructures/jupyter/percipio/2020/06/22/Fundamental-Data-Structures.html" rel="alternate" type="text/html" title="Fundamental Data Structures" /><published>2020-06-22T00:00:00-05:00</published><updated>2020-06-22T00:00:00-05:00</updated><id>https://elydora.github.io/DataScienceBlog/datastructures/jupyter/percipio/2020/06/22/Fundamental-Data-Structures</id><content type="html" xml:base="https://elydora.github.io/DataScienceBlog/datastructures/jupyter/percipio/2020/06/22/Fundamental-Data-Structures.html">&lt;!--
 #################################################
 ### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
 #################################################
-# file to edit: _notebooks/2020-06-21-comp-dt-DeepAndShallowCopies.ipynb
+# file to edit: _notebooks/2020-06-22-Fundamental-Data-Structures.ipynb
 --&gt;
 
 &lt;div class=&quot;container&quot; id=&quot;notebook-container&quot;&gt;
@@ -10841,8 +10974,56 @@ Total iterations are 16
 
 &lt;div class=&quot;inner_cell&quot;&gt;
     &lt;div class=&quot;input_area&quot;&gt;
-&lt;div class=&quot; highlight hl-ipython2&quot;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;old_str&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Python&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;old_str&lt;/span&gt;
+&lt;div class=&quot; highlight hl-ipython2&quot;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;# make difficult operations possible&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# occupy less space and still represent the complexity of information and&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# its interrelationships in an intuitive way&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# data structures and algorithms go hand-in-hand&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# A set is extremely fast for membership and containment queries&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# stacks can be used for undo functionality in applications as well as back functionality&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# index data structures&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# hash tables&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# graphs for relationships&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# data structures are concrete representations of data from the point of view of an implementor&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# they specify the actual implementation of the structure in code to meet the expected behavior&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;output_wrapper&quot;&gt;
+&lt;div class=&quot;output&quot;&gt;
+
+&lt;div class=&quot;output_area&quot;&gt;
+
+&lt;div class=&quot;output_subarea output_stream output_stdout output_text&quot;&gt;
+&lt;pre&gt;Hallo
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+    
+
+    
+    
+&lt;div class=&quot;cell border-box-sizing code_cell rendered&quot;&gt;
+&lt;div class=&quot;input&quot;&gt;
+
+&lt;div class=&quot;inner_cell&quot;&gt;
+    &lt;div class=&quot;input_area&quot;&gt;
+&lt;div class=&quot; highlight hl-ipython2&quot;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;# Time (# of operations / amount of processing)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# Space (make best use of available space, memory and disk space needed)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# Network (overall network bandwidth, network speed)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# efficient = uses fewer resources along all these axes&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# using more of the resources that are plenty, and less of those who lack&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# performance indicates how much of these resources are used by the code&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# == Performance can be measured in terms of complexity&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# Complexity is a measure of how resource requirements change as the size of the problem gets larger&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# The higher the complexity of a overall problem, the lower the performance&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
     &lt;/div&gt;
@@ -10857,7 +11038,7 @@ Total iterations are 16
 
 
 &lt;div class=&quot;output_text output_subarea output_execute_result&quot;&gt;
-&lt;pre&gt;&amp;#39;Python&amp;#39;&lt;/pre&gt;
+&lt;pre&gt;2&lt;/pre&gt;
 &lt;/div&gt;
 
 &lt;/div&gt;
@@ -10875,77 +11056,13 @@ Total iterations are 16
 
 &lt;div class=&quot;inner_cell&quot;&gt;
     &lt;div class=&quot;input_area&quot;&gt;
-&lt;div class=&quot; highlight hl-ipython2&quot;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;new_str&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;old_str&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;old_str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;new_str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-    &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;output_wrapper&quot;&gt;
-&lt;div class=&quot;output&quot;&gt;
-
-&lt;div class=&quot;output_area&quot;&gt;
-
-&lt;div class=&quot;output_subarea output_stream output_stdout output_text&quot;&gt;
-&lt;pre&gt;Python
-Python
-&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-    
-
-    
-    
-&lt;div class=&quot;cell border-box-sizing code_cell rendered&quot;&gt;
-&lt;div class=&quot;input&quot;&gt;
-
-&lt;div class=&quot;inner_cell&quot;&gt;
-    &lt;div class=&quot;input_area&quot;&gt;
-&lt;div class=&quot; highlight hl-ipython2&quot;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;new_str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;T&amp;quot;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-    &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;output_wrapper&quot;&gt;
-&lt;div class=&quot;output&quot;&gt;
-
-&lt;div class=&quot;output_area&quot;&gt;
-
-&lt;div class=&quot;output_subarea output_text output_error&quot;&gt;
-&lt;pre&gt;
-&lt;span class=&quot;ansi-red-intense-fg ansi-bold&quot;&gt;---------------------------------------------------------------------------&lt;/span&gt;
-&lt;span class=&quot;ansi-red-intense-fg ansi-bold&quot;&gt;TypeError&lt;/span&gt;                                 Traceback (most recent call last)
-&lt;span class=&quot;ansi-green-intense-fg ansi-bold&quot;&gt;&amp;lt;ipython-input-3-b6e8ff6bdf2e&amp;gt;&lt;/span&gt; in &lt;span class=&quot;ansi-cyan-fg&quot;&gt;&amp;lt;module&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;ansi-green-intense-fg ansi-bold&quot;&gt;----&amp;gt; 1&lt;/span&gt;&lt;span class=&quot;ansi-yellow-intense-fg ansi-bold&quot;&gt; &lt;/span&gt;new_str&lt;span class=&quot;ansi-yellow-intense-fg ansi-bold&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;ansi-cyan-intense-fg ansi-bold&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;ansi-yellow-intense-fg ansi-bold&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;ansi-yellow-intense-fg ansi-bold&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;ansi-blue-intense-fg ansi-bold&quot;&gt;&amp;#34;T&amp;#34;&lt;/span&gt;
-
-&lt;span class=&quot;ansi-red-intense-fg ansi-bold&quot;&gt;TypeError&lt;/span&gt;: &amp;#39;str&amp;#39; object does not support item assignment&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-    
-
-    
-    
-&lt;div class=&quot;cell border-box-sizing code_cell rendered&quot;&gt;
-&lt;div class=&quot;input&quot;&gt;
-
-&lt;div class=&quot;inner_cell&quot;&gt;
-    &lt;div class=&quot;input_area&quot;&gt;
-&lt;div class=&quot; highlight hl-ipython2&quot;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;copy&lt;/span&gt;
+&lt;div class=&quot; highlight hl-ipython2&quot;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;# Read - Write - Assignment - Test&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# do not worry about the number of operations&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# be worried how that number changes is based on the input size&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# that is how performance changes based on input size&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# focus on the worst case performance&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# what is the maximum number of basic operations that might have to be performed based on the input&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# Complexity varies with the algorithm&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
     &lt;/div&gt;
@@ -10962,146 +11079,11 @@ Python
 
 &lt;div class=&quot;inner_cell&quot;&gt;
     &lt;div class=&quot;input_area&quot;&gt;
-&lt;div class=&quot; highlight hl-ipython2&quot;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;first_str&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Will&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;second_str&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;copy&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;copy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;first_str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;first_str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;second_str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-    &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;output_wrapper&quot;&gt;
-&lt;div class=&quot;output&quot;&gt;
-
-&lt;div class=&quot;output_area&quot;&gt;
-
-&lt;div class=&quot;output_subarea output_stream output_stdout output_text&quot;&gt;
-&lt;pre&gt;Will
-Will
-&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-    
-
-    
-    
-&lt;div class=&quot;cell border-box-sizing code_cell rendered&quot;&gt;
-&lt;div class=&quot;input&quot;&gt;
-
-&lt;div class=&quot;inner_cell&quot;&gt;
-    &lt;div class=&quot;input_area&quot;&gt;
-&lt;div class=&quot; highlight hl-ipython2&quot;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;second_str&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Smith&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;first_str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;second_str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-    &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;output_wrapper&quot;&gt;
-&lt;div class=&quot;output&quot;&gt;
-
-&lt;div class=&quot;output_area&quot;&gt;
-
-&lt;div class=&quot;output_subarea output_stream output_stdout output_text&quot;&gt;
-&lt;pre&gt;Will
-Smith
-&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-    
-
-    
-    
-&lt;div class=&quot;cell border-box-sizing code_cell rendered&quot;&gt;
-&lt;div class=&quot;input&quot;&gt;
-
-&lt;div class=&quot;inner_cell&quot;&gt;
-    &lt;div class=&quot;input_area&quot;&gt;
-&lt;div class=&quot; highlight hl-ipython2&quot;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;first_str&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Johnny&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;second_str&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;copy&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;deepcopy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;first_str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# the same&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;first_str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;second_str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-    &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;output_wrapper&quot;&gt;
-&lt;div class=&quot;output&quot;&gt;
-
-&lt;div class=&quot;output_area&quot;&gt;
-
-&lt;div class=&quot;output_subarea output_stream output_stdout output_text&quot;&gt;
-&lt;pre&gt;Johnny
-Johnny
-&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-    
-
-    
-    
-&lt;div class=&quot;cell border-box-sizing code_cell rendered&quot;&gt;
-&lt;div class=&quot;input&quot;&gt;
-
-&lt;div class=&quot;inner_cell&quot;&gt;
-    &lt;div class=&quot;input_area&quot;&gt;
-&lt;div class=&quot; highlight hl-ipython2&quot;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;second_str&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Depp&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;first_str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;second_str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-    &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;output_wrapper&quot;&gt;
-&lt;div class=&quot;output&quot;&gt;
-
-&lt;div class=&quot;output_area&quot;&gt;
-
-&lt;div class=&quot;output_subarea output_stream output_stdout output_text&quot;&gt;
-&lt;pre&gt;Johnny
-Depp
-&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-    
-
-    
-    
-&lt;div class=&quot;cell border-box-sizing code_cell rendered&quot;&gt;
-&lt;div class=&quot;input&quot;&gt;
-
-&lt;div class=&quot;inner_cell&quot;&gt;
-    &lt;div class=&quot;input_area&quot;&gt;
-&lt;div class=&quot; highlight hl-ipython2&quot;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;names&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;Jan&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Felix&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Ralph&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;second_names&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;names&lt;/span&gt;
+&lt;div class=&quot; highlight hl-ipython2&quot;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;# Represents the complexity of an algorithm&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# An algorithm whose complexity does not change with the input size is O(1)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# -&amp;gt; the algorithm is said to have constant time complexity&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# The algorithm is said to have constant time complexity&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# It takes the same amount of time, even if the input size is doubled, tripled, or increased to any level&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
     &lt;/div&gt;
@@ -11118,27 +11100,13 @@ Depp
 
 &lt;div class=&quot;inner_cell&quot;&gt;
     &lt;div class=&quot;input_area&quot;&gt;
-&lt;div class=&quot; highlight hl-ipython2&quot;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;second_names&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Maria&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;names&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;second_names&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;div class=&quot; highlight hl-ipython2&quot;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;# The complexity of an algorithm is O(N^2) if the time taken by the algorithm increases quadratically when N increases&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# Lower order terms and constants do not matter while expressing complexity&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# O(N^2 + 1000) is equivalent to O(N^2) -&amp;gt; N is assumed very large&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# O(N^2+N) is equivalent to O(N^2)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
     &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;output_wrapper&quot;&gt;
-&lt;div class=&quot;output&quot;&gt;
-
-&lt;div class=&quot;output_area&quot;&gt;
-
-&lt;div class=&quot;output_subarea output_stream output_stdout output_text&quot;&gt;
-&lt;pre&gt;[&amp;#39;Jan&amp;#39;, &amp;#39;Maria&amp;#39;, &amp;#39;Ralph&amp;#39;]
-[&amp;#39;Jan&amp;#39;, &amp;#39;Maria&amp;#39;, &amp;#39;Ralph&amp;#39;]
-&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
 &lt;/div&gt;
 &lt;/div&gt;
 
@@ -11152,28 +11120,10 @@ Depp
 
 &lt;div class=&quot;inner_cell&quot;&gt;
     &lt;div class=&quot;input_area&quot;&gt;
-&lt;div class=&quot; highlight hl-ipython2&quot;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;third_names&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;copy&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;copy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;names&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;third_names&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Julia&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;names&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;third_names&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;div class=&quot; highlight hl-ipython2&quot;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt; 
 &lt;/pre&gt;&lt;/div&gt;
 
     &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;output_wrapper&quot;&gt;
-&lt;div class=&quot;output&quot;&gt;
-
-&lt;div class=&quot;output_area&quot;&gt;
-
-&lt;div class=&quot;output_subarea output_stream output_stdout output_text&quot;&gt;
-&lt;pre&gt;[&amp;#39;Jan&amp;#39;, &amp;#39;Maria&amp;#39;, &amp;#39;Ralph&amp;#39;]
-[&amp;#39;Julia&amp;#39;, &amp;#39;Maria&amp;#39;, &amp;#39;Ralph&amp;#39;]
-&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
 &lt;/div&gt;
 &lt;/div&gt;
 
@@ -11187,7 +11137,12 @@ Depp
 
 &lt;div class=&quot;inner_cell&quot;&gt;
     &lt;div class=&quot;input_area&quot;&gt;
-&lt;div class=&quot; highlight hl-ipython2&quot;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;
+&lt;div class=&quot; highlight hl-ipython2&quot;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;# Header points to the first element&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# Best way to count is to increment/decrement a counter at every list operation&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# Adding: At the end/ in between -&amp;gt; O(N); at the beginning -&amp;gt; O(1)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# Deleting: At the end/ in between -&amp;gt; O(N); at the beginning -&amp;gt; O(1)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# Counting: Iterating -&amp;gt; O(1), Increment/Decrement a permanent Counter -&amp;gt; O(1)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# Reversing: O(N)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
     &lt;/div&gt;
@@ -11197,7 +11152,64 @@ Depp
 &lt;/div&gt;
     
 
-&lt;/div&gt;</content><author><name>Felix</name></author><category term="datatypes" /><category term="jupyter" /><category term="percipio" /><summary type="html"></summary></entry><entry><title type="html">Complex Data Types - Dictionaries and Sets</title><link href="https://elydora.github.io/DataScienceBlog/datatypes/jupyter/percipio/2020/06/21/comp-dt-DictionaryAndSetsInPython.html" rel="alternate" type="text/html" title="Complex Data Types - Dictionaries and Sets" /><published>2020-06-21T00:00:00-05:00</published><updated>2020-06-21T00:00:00-05:00</updated><id>https://elydora.github.io/DataScienceBlog/datatypes/jupyter/percipio/2020/06/21/comp-dt-DictionaryAndSetsInPython</id><content type="html" xml:base="https://elydora.github.io/DataScienceBlog/datatypes/jupyter/percipio/2020/06/21/comp-dt-DictionaryAndSetsInPython.html">&lt;!--
+    
+    
+&lt;div class=&quot;cell border-box-sizing code_cell rendered&quot;&gt;
+&lt;div class=&quot;input&quot;&gt;
+
+&lt;div class=&quot;inner_cell&quot;&gt;
+    &lt;div class=&quot;input_area&quot;&gt;
+&lt;div class=&quot; highlight hl-ipython2&quot;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;# Common operations (add, remove, peek) have O(1) complexity&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# Can be implemented using a linked list&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# LIFO principle&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# Insertion and deletion at the same end&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+    
+
+    
+    
+&lt;div class=&quot;cell border-box-sizing code_cell rendered&quot;&gt;
+&lt;div class=&quot;input&quot;&gt;
+
+&lt;div class=&quot;inner_cell&quot;&gt;
+    &lt;div class=&quot;input_area&quot;&gt;
+&lt;div class=&quot; highlight hl-ipython2&quot;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;# Common operations (add, remove, peek) have O(1) complexity&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# Can be implemented using a linked list&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# FIFO principle&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# Insertion and deletion at opposite ends&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+    
+
+    
+    
+&lt;div class=&quot;cell border-box-sizing code_cell rendered&quot;&gt;
+&lt;div class=&quot;input&quot;&gt;
+
+&lt;div class=&quot;inner_cell&quot;&gt;
+    &lt;div class=&quot;input_area&quot;&gt;
+&lt;div class=&quot; highlight hl-ipython2&quot;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt; 
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+    
+
+&lt;/div&gt;</content><author><name>Felix</name></author><category term="datastructures" /><category term="jupyter" /><category term="percipio" /><summary type="html"></summary></entry><entry><title type="html">Complex Data Types - Dictionaries and Sets</title><link href="https://elydora.github.io/DataScienceBlog/datatypes/jupyter/percipio/2020/06/21/comp-dt-DictionaryAndSetsInPython.html" rel="alternate" type="text/html" title="Complex Data Types - Dictionaries and Sets" /><published>2020-06-21T00:00:00-05:00</published><updated>2020-06-21T00:00:00-05:00</updated><id>https://elydora.github.io/DataScienceBlog/datatypes/jupyter/percipio/2020/06/21/comp-dt-DictionaryAndSetsInPython</id><content type="html" xml:base="https://elydora.github.io/DataScienceBlog/datatypes/jupyter/percipio/2020/06/21/comp-dt-DictionaryAndSetsInPython.html">&lt;!--
 #################################################
 ### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
 #################################################
