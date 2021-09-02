@@ -3,7 +3,7 @@
     
         "post0": {
             "title": "Folium Test",
-            "content": "Folium Test . import folium from IPython.display import HTML, display m = folium.Map(location=[45.5236, -122.6750]) m.save(r&#39;E: Dev DataScienceBlog html test_map.html&#39;) . from IPython.display import Image # display(HTML(r&#39;E: Dev DataScienceBlog html test_map.html&#39;)) Image(filename=r&#39;E: Dev DataScienceBlog png 2021-09-02 19_47_27-Window.png&#39;) .",
+            "content": "Folium Test . import folium from IPython.display import HTML, display m = folium.Map(location=[45.5236, -122.6750]) m.save(r&#39;E: Dev DataScienceBlog html test_map.html&#39;) . from IPython.display import Image # display(HTML(r&#39;E: Dev DataScienceBlog html test_map.html&#39;)) Image(filename=r&#39;E: Dev DataScienceBlog png 2021-09-02 19_47_27-Window.png&#39;) . display(HTML(r&#39;E: Dev DataScienceBlog html test_map.html&#39;)) . &lt;!DOCTYPE html&gt; .",
             "url": "https://elydora.github.io/DataScienceBlog/ibm/data_science/ml/visualization/2021/09/01/folium-test.html",
             "relUrl": "/ibm/data_science/ml/visualization/2021/09/01/folium-test.html",
             "date": " • Sep 1, 2021"
