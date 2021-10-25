@@ -16,7 +16,7 @@
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2021-06-24T00:00:00-05:00" />
 <script type="application/ld+json">
-{"headline":"Report Capstone Project.ipynb","url":"https://elydora.github.io/DataScienceBlog/2021/06/24/report-capstone-project.ipynb.html","dateModified":"2021-06-24T00:00:00-05:00","datePublished":"2021-06-24T00:00:00-05:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://elydora.github.io/DataScienceBlog/2021/06/24/report-capstone-project.ipynb.html"},"description":"1 Introduction - 2 -","@context":"https://schema.org"}</script>
+{"dateModified":"2021-06-24T00:00:00-05:00","datePublished":"2021-06-24T00:00:00-05:00","url":"https://elydora.github.io/DataScienceBlog/2021/06/24/report-capstone-project.ipynb.html","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://elydora.github.io/DataScienceBlog/2021/06/24/report-capstone-project.ipynb.html"},"headline":"Report Capstone Project.ipynb","description":"1 Introduction - 2 -","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/DataScienceBlog/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://elydora.github.io/DataScienceBlog/feed.xml" title="Yet Another Data Science Blog" /><link rel="shortcut icon" type="image/x-icon" href="/DataScienceBlog/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -138,7 +138,7 @@ venues in the area, grouped by their categories.</p>
 
 <p>The basis for the analysis will be the 2010 census data of all zip codes in Los Angeles County, CA. This census data provides information on the composition of the population, age distribution, and the total numbers. This dataset will be enhanced with the 2019 median household income per zip code. The income can also serve as factor in the recommendation on where to open a restaurant, how it should be set up, and what the target audience could be. As a third part geospatial data is added for every zip code, to be able to use Foursquare to explore existing food offerings in the communities of Los Angeles County, CA.</p>
 
-<p><img src="assets/img/2021-06-24-report-capstone-project.ipynb/media/image1.png" alt="Table Description automatically generated with medium confidence" /></p>
+<p><img src="assets/img/2021-06-24-report-capstone-project.ipynb/media/image1.png" alt="Table Description automatically generated" /></p>
 
 <p>Figure 1 - subset of the prepared dataset</p>
 
@@ -254,7 +254,7 @@ can be given.</p>
   </tbody>
 </table>
 
-<p>Table - Areas with a good combination of income and population</p>
+<p>Table 1- Areas with a good combination of income and population</p>
 
 <p>These four cities / neighbourhoods seem to be suitable areas, based on their combination of population and median income. We are going to see if this assumption is confirmed going forward.</p>
 
@@ -262,7 +262,7 @@ can be given.</p>
 
 <p><img src="https://Elydora.github.io/DataScienceBlog/assets/img/2021-06-24-report-capstone-project.ipynb/media/image5.png" alt="" /></p>
 
-<p>Figure - Distribution of recommended Food Venue Categories</p>
+<p>Figure 5- Distribution of recommended Food Venue Categories</p>
 
 <p>Mexican restaurants are by far the most often recommended type of food venue in Los Angeles County, CA. They are followed in some distance by pizza places, fast food and Chinese restaurants and bakeries.</p>
 
@@ -270,7 +270,7 @@ can be given.</p>
 
 <p><img src="https://Elydora.github.io/DataScienceBlog/assets/img/2021-06-24-report-capstone-project.ipynb/media/image6.png" alt="" /></p>
 
-<p>Figure - Top 10 Food Venue Categories</p>
+<p>Figure 6- Top 10 Food Venue Categories</p>
 
 <h2 id="clustering-the-dataset">Clustering the Dataset</h2>
 
@@ -280,7 +280,7 @@ can be given.</p>
 
 <p><img src="https://Elydora.github.io/DataScienceBlog/assets/img/2021-06-24-report-capstone-project.ipynb/media/image7.png" alt="" /></p>
 
-<p>Figure - Results of the Elbow Method to choose a k value</p>
+<p>Figure 7- Results of the Elbow Method to choose a k value</p>
 
 <p>I provided five numeric features of the dataset for the clustering algorithm,</p>
 
@@ -312,7 +312,7 @@ can be given.</p>
 
 <p><img src="https://Elydora.github.io/DataScienceBlog/assets/img/2021-06-24-report-capstone-project.ipynb/media/image8.png" alt="" /></p>
 
-<p>Figure - Clusters that were formed from the Dataset</p>
+<p>Figure 8 - Clusters that were formed from the Dataset</p>
 
 <h2 id="33-selecting-a-cluster-and-three-of-the-best-fitting-areas">3.3 Selecting a Cluster and three of the best fitting areas</h2>
 
@@ -320,7 +320,7 @@ can be given.</p>
 
 <p><img src="https://Elydora.github.io/DataScienceBlog/assets/img/2021-06-24-report-capstone-project.ipynb/media/image9.png" alt="" /></p>
 
-<p>Figure - Labels for the Clusters</p>
+<p>Figure 9- Labels for the Clusters</p>
 
 <p>So based on this information I am going to choose Cluster 3 for further<br />
 evaluation and as the cluster where I will pick an area from. This cluster<br />
@@ -332,13 +332,13 @@ food venue category. So, it should contain the areas that fit best for further a
 
 <p><img src="https://Elydora.github.io/DataScienceBlog/assets/img/2021-06-24-report-capstone-project.ipynb/media/image10.png" alt="" /></p>
 
-<p>Figure - Geographical Locations of the Areas of Cluster 3</p>
+<p>Figure 10- Geographical Locations of the Areas of Cluster 3</p>
 
 <p>Most of the locations are in very densely populated areas, most of them in the vicinity of the city of Los Angeles. I applied the decision factor again to every of the 22 areas, to identify the best fitting areas and to further investigate them. The following graph shows the areas that have the best distribution of income and population, according to the decision factor used as metric. What the data also showed, that as the average household size increases, the income also decreases.</p>
 
 <p><img src="https://Elydora.github.io/DataScienceBlog/assets/img/2021-06-24-report-capstone-project.ipynb/media/image11.png" alt="" /></p>
 
-<p>Figure - Five best fitting Areas</p>
+<p>Figure 11- Five best fitting Areas</p>
 
 <p>According to these metrics there are three areas that stand out:</p>
 
@@ -369,7 +369,7 @@ initial findings.</p>
 
 <p><img src="https://Elydora.github.io/DataScienceBlog/assets/img/2021-06-24-report-capstone-project.ipynb/media/image12.png" alt="" /></p>
 
-<p>Figure - Distribution of Food Venues in the 3 chosen Areas</p>
+<p>Figure 12 - Distribution of Food Venues in the 3 chosen Areas</p>
 
 <p>Having a look at the distribution of food venues across the three areas, we can make the following observations:</p>
 
