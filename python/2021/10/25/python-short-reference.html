@@ -80,7 +80,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      16 min read
+      15 min read
     
 </span></p>
 
@@ -3067,6 +3067,18 @@ False
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>a class of which only a single instance can exist</li>
+<li>Ensure a class is instantiated only once, and provide a global point of
+access to it</li>
+</ul>
+
+</div>
+</div>
+</div>
     
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -3074,10 +3086,7 @@ False
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># a class of which only a single instance can exist</span>
-<span class="c1"># Ensure a class is instantiated only once, and provide a global point of access to it</span>
-<span class="c1"># Implementation</span>
-<span class="k">class</span> <span class="nc">Logger</span><span class="p">:</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="k">class</span> <span class="nc">Logger</span><span class="p">:</span>
     <span class="n">__instance</span> <span class="o">=</span> <span class="kc">None</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -3100,33 +3109,23 @@ False
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>No instance exists, creating a new one
-</pre>
-</div>
-</div>
-
-<div class="output_area">
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>&lt;__main__.Logger at 0x193517d2430&gt;</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
 </div>
     
 
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Pythonic implementation</p>
+<ul>
+<li>new is always called first -&gt; it creates the instance</li>
+<li>cls is reference to not yet existing instance</li>
+<li>init is used to initialize the existing instance -&gt; self is a reference to
+the instance</li>
+</ul>
+
+</div>
+</div>
+</div>
     
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -3134,11 +3133,7 @@ False
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># new is always called first -&gt; it creates the instance,</span>
-<span class="c1"># cls is reference to not yet existing instance</span>
-<span class="c1"># init is used to initialize the existing instance -&gt;</span>
-<span class="c1"># self is a reference to the instance</span>
-<span class="k">class</span> <span class="nc">PythonicLogger</span><span class="p">:</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="k">class</span> <span class="nc">PythonicLogger</span><span class="p">:</span>
     <span class="n">__instance</span> <span class="o">=</span> <span class="kc">None</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -3198,6 +3193,30 @@ False
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Separate the creation of objects from their use</li>
+<li>Class creation or Object creation</li>
+<li>Class-creation patterns use inheritance</li>
+<li>Object-creation patterns use delegation</li>
+<li>Factory method is specified in base class, implemented in derived classes</li>
+<li>Creates an instance of several derived classes</li>
+<li>Define an interface for creating an object, but let subclasses decide
+which class to instantiate</li>
+<li>Used to postpone instantiation - responsibility passes from base class to
+derived classes</li>
+<li>Factory method -&gt; create an instance of any of many derived classes</li>
+<li>Abstract F. pattern -&gt; create an instance of any one of many families of
+derived classes</li>
+<li>Abstract Factory: create instances of several families of classes
+encapsulate platform dependencies</li>
+</ul>
+
+</div>
+</div>
+</div>
     
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -3205,19 +3224,7 @@ False
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Class creation or Object creation</span>
-<span class="c1"># Class-creation patterns use inheritance</span>
-<span class="c1"># Object-creation patterns use delegation</span>
-<span class="c1"># Factory method is specified in base class, implemented in derived classes</span>
-<span class="c1"># Creates an instance of several derived classes</span>
-<span class="c1"># Define an interface for creating an object, but let subclasses decide which class to instantiate</span>
-<span class="c1"># Used to postpone instantiation - responsibility passes from base class to derived classes</span>
-<span class="c1"># Factory method -&gt; create an instance of any of many derived classes</span>
-<span class="c1"># Abstract F. pattern -&gt; create an instance of any one of many families of derived classes</span>
-<span class="c1"># Abstract Factory: create instances of several families of classes</span>
-<span class="c1"># encapsulate platform dependencies</span>
-<span class="c1"># Factory Method</span>
-<span class="k">class</span> <span class="nc">Product</span><span class="p">:</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="k">class</span> <span class="nc">Product</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">price</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">__name</span> <span class="o">=</span> <span class="n">name</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">__price</span> <span class="o">=</span> <span class="n">price</span>
@@ -3317,6 +3324,19 @@ False
 </div>
     
 
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Abstract Factory</p>
+<p>An abstract factory is a factory that returns factories.
+ A normal factory can be used to create sets of related objects.
+ An abstract factory returns factories.
+ Thus, an abstract factory is used to return factories that can be
+ used to create sets of related objects.</p>
+
+</div>
+</div>
+</div>
     
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -3324,12 +3344,7 @@ False
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># An abstract factory is a factory that returns factories.</span>
-<span class="c1"># A normal factory can be used to create sets of related objects.</span>
-<span class="c1"># An abstract factory returns factories.</span>
-<span class="c1"># Thus, an abstract factory is used to return factories that can be</span>
-<span class="c1"># used to create sets of related objects.</span>
-<span class="kn">import</span> <span class="nn">abc</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="kn">import</span> <span class="nn">abc</span>
 <span class="k">class</span> <span class="nc">Toy</span><span class="p">(</span><span class="n">metaclass</span><span class="o">=</span><span class="n">abc</span><span class="o">.</span><span class="n">ABCMeta</span><span class="p">):</span>
     <span class="nd">@abc</span><span class="o">.</span><span class="n">abstractmethod</span>
     <span class="k">def</span> <span class="nf">show</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -3498,6 +3513,7 @@ Remote controlled car
 <span class="n">RED_CAR</span> <span class="o">=</span> <span class="s1">'red_car'</span>
 <span class="n">BLUE_LEGO</span> <span class="o">=</span> <span class="s1">'blue_lego'</span>
 <span class="n">GREEN_ACTION_FIGURE</span> <span class="o">=</span> <span class="s1">'green_action_figure'</span>
+
 <span class="k">class</span> <span class="nc">ColorfulToysProducer</span><span class="p">:</span>
 
     <span class="n">__colorful_toys_factory</span> <span class="o">=</span> <span class="n">ColorfulToysFactory</span><span class="p">()</span>
@@ -3591,6 +3607,25 @@ Remote controlled car
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Builder Pattern</p>
+<ul>
+<li>Separate the construction of an object from representation</li>
+<li>allow same construction process for many representations</li>
+<li>parse a complex representation, create different objects</li>
+<li>Consider a SQL query builder class</li>
+<li>allows step-by-step creation of a SQL query</li>
+<li>Query is a complex entity with many different parts</li>
+<li>Applications might build once, run multiple times</li>
+<li>Separates object construction from its representation</li>
+<li>parse a complex construction process into simple constituent operations</li>
+</ul>
+
+</div>
+</div>
+</div>
     
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -3598,16 +3633,7 @@ Remote controlled car
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Separate the construction of an object from representation</span>
-<span class="c1"># allow same construction process for many representations</span>
-<span class="c1"># parse a complex representation, create different objects</span>
-<span class="c1"># Consider a SQL query builder class</span>
-<span class="c1"># allows step-by-step creation of a SQL query</span>
-<span class="c1"># Query is a complex entity with many different parts</span>
-<span class="c1"># Applications might build once, run multiple times</span>
-<span class="c1"># Separates object construction from its representation</span>
-<span class="c1"># parse a complex construction process into simple constituent operations</span>
-<span class="k">class</span> <span class="nc">Mobile</span><span class="p">:</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="k">class</span> <span class="nc">Mobile</span><span class="p">:</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
                  <span class="n">name</span><span class="p">,</span>
@@ -3703,6 +3729,20 @@ battery: 3400 mAh
 </div>
     
 
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>to get rid of the long list of parameters we can have the features in the</li>
+<li>main program but directly</li>
+<li>setting attributes in the client program is wrong, it goes against</li>
+<li>encapsulate what varies principle</li>
+<li>this is prone to errors and maintenance unfriendly</li>
+</ul>
+
+</div>
+</div>
+</div>
     
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -3710,11 +3750,7 @@ battery: 3400 mAh
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># main program but directly</span>
-<span class="c1"># setting attributes in the client program is wrong, it goes against</span>
-<span class="c1"># encapsulate what varies principle</span>
-<span class="c1"># this is prone to errors and maintenance unfriendly</span>
-<span class="k">class</span> <span class="nc">Mobile</span><span class="p">():</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="k">class</span> <span class="nc">Mobile</span><span class="p">():</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 
@@ -3748,26 +3784,6 @@ battery: 3400 mAh
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>name: Samsung S10
-weight: None
-screen_size: ('6.1 inch',)
-ram: None
-os: ('android 9.0',)
-camera_mp: ('12 megapixel',)
-battery: 3400 mAh
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
 </div>
     
 
@@ -3780,6 +3796,7 @@ battery: 3400 mAh
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># the build method instantiates a new mobile object and encapsulates setting</span>
 <span class="c1"># of attributes</span>
+
 <span class="k">class</span> <span class="nc">MyMobileBuilder</span><span class="p">():</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -3950,6 +3967,26 @@ battery: 3400 mAh
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Used when the cost of initializing objects is high</li>
+<li>Number of objects in use at a time is low</li>
+<li>Rate of object instantiation is high</li>
+<li>Pools used to cache and manage objects</li>
+<li>Avoid creating new objects, when an existing one is available</li>
+<li>Reuse objects rather than incur the cost of creating one</li>
+<li>common example: thread pools</li>
+<li>some processes are embarrassingly parallel</li>
+<li>threads are expensive to create and free up</li>
+<li>use a thread pool -&gt; mitigates the overhead of pool creation</li>
+<li>avoids needless re-instantiation and expensive acquisition of resources</li>
+</ul>
+
+</div>
+</div>
+</div>
     
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -3957,17 +3994,7 @@ battery: 3400 mAh
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Number of objects in use at a time is low</span>
-<span class="c1"># Rate of object instantiation is high</span>
-<span class="c1"># Pools used to cache and manage objects</span>
-<span class="c1"># Avoid creating new objects, when an existing one is available</span>
-<span class="c1"># Reuse objects rather than incur the cost of creating one</span>
-<span class="c1"># common example: thread pools</span>
-<span class="c1"># some processes are embarrassingly parallel</span>
-<span class="c1"># threads are expensive to create and free up</span>
-<span class="c1"># use a thread pool -&gt; mitigates the overhead of pool creation</span>
-<span class="c1"># avoids needless re-instantiation and expensive acquisition of resources</span>
-<span class="k">class</span> <span class="nc">Connection</span><span class="p">:</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="k">class</span> <span class="nc">Connection</span><span class="p">:</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">__is_used</span> <span class="o">=</span> <span class="kc">False</span>
